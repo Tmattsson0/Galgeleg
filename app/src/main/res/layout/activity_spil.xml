@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="69dp"
         android:ems="10"
+        android:maxLength="1"
         android:hint="Bokstav"
         android:inputType="textPersonName"
         android:textAlignment="center"
