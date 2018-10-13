@@ -21,6 +21,23 @@ public class GalgeLogik {
     private boolean spilletErVundet;
     private boolean spilletErTabt;
 
+    public boolean isSpilletErVundet() {
+        return spilletErVundet;
+    }
+
+    public void setSpilletErVundet(boolean spilletErVundet) {
+        this.spilletErVundet = spilletErVundet;
+    }
+
+    public boolean isSpilletErTabt() {
+        return spilletErTabt;
+    }
+
+    public void setSpilletErTabt(boolean spilletErTabt) {
+        this.spilletErTabt = spilletErTabt;
+    }
+
+
 
     public ArrayList<String> getBrugteBogstaver() {
         return brugteBogstaver;

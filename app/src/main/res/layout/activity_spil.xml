@@ -16,10 +16,12 @@
         android:layout_marginBottom="69dp"
         android:ems="10"
         android:maxLength="1"
-        android:hint="Bokstav"
+        android:hint="Bogstav"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
+        android:textColorHint="@drawable/selector"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

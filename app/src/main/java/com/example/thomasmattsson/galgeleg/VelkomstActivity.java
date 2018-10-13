@@ -29,7 +29,6 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         if (v == button1) {
             Intent i = new Intent(this, SpilActivity.class);
             startActivity(i);
-
         }
     }
 }

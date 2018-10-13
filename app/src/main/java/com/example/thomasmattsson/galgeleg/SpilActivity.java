@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,20 +44,27 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
         //Obscure word method
         gætteTekst.setText(logik.getSynligtOrd());
-        Log.d(ordet,"onCreate: Ordet er: " + ordet);
+        Log.d(ordet, "onCreate: Ordet er: " + ordet);
     }
 
     @Override
     public void onClick(View v) {
 
         //Gæt knappen
-        if (v == button2){
+        if (v == button2) { //(event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
             String BogstavGæt = (gætteBogstav.getText().toString());
-            if(TextUtils.isEmpty(BogstavGæt)) {
-                Toast.makeText(this, "Indtast venligst et bokstav", Toast.LENGTH_SHORT).show();
-        }
+            if (TextUtils.isEmpty(BogstavGæt)) {
+                Toast.makeText(this, "Indtast venligst et bogstav", Toast.LENGTH_SHORT).show();
+            }
             logik.gætBogstav(BogstavGæt);
             gætteTekst.setText(logik.getSynligtOrd());
+            logik.logStatus();
+            if (logik.isSpilletErVundet()) {
+                Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();
+            }
+            if (logik.isSpilletErTabt()) {
+                Toast.makeText(this, "Du tabte!", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }
