@@ -24,8 +24,9 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
     GalgeLogik logik = new GalgeLogik();
     Button button2;
-    TextView gætteTekst;
+    TextView gætteTekst, forkerteBogstaver;
     EditText gætteBogstav;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +37,13 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         gætteTekst = (TextView) findViewById(R.id.textView5);
         button2 = (Button) findViewById(R.id.button2);
         gætteBogstav = (EditText) findViewById(R.id.editText);
+        forkerteBogstaver = (TextView) findViewById(R.id.textView);
 
         //OnClick
         button2.setOnClickListener(this);
         gætteTekst.setOnClickListener(this);
         gætteBogstav.setOnClickListener(this);
-
+        forkerteBogstaver.setOnClickListener(this);
 
         //Random word
         Random rn = new Random();
@@ -64,7 +66,10 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Indtast venligst et bogstav", Toast.LENGTH_SHORT).show();
             }
             logik.gætBogstav(BogstavGæt);
+            forkerteBogstaver.setText("Forkerte bogstaver [" + logik.getAntalForkerteBogstaver() + "]: \n" + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
             gætteTekst.setText(logik.getSynligtOrd());
+//            logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet());
+
             logik.logStatus();
             if (logik.isSpilletErVundet()) {
                 Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class GalgeLogik {
     /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
@@ -191,5 +192,26 @@ public class GalgeLogik {
             starstr += "*";
         }
         return starstr;
+    }
+
+    //Kode jeg har fundet på nettet
+    public String wrongLetters(String str1, String str2){
+        String one = str1;
+        String two = str2;
+        StringBuilder s = new StringBuilder();
+        int a = 0;
+
+        Set<Character> set = new HashSet<>();
+        for(char c : two.toCharArray())
+            set.add(c); //add all second string character to set
+        for(char c : one.toCharArray())
+        {
+            if(!set.contains(c)) //check if the character is not one of the character of second string
+                s.append(c); //append the current character to the pool
+        }
+
+        System.out.println("LOL" + s);
+
+        return s.toString();
     }
 }

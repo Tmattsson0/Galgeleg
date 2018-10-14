@@ -15,16 +15,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="69dp"
         android:ems="10"
-        android:maxLength="1"
         android:hint="Bogstav"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
+        android:maxLength="1"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-        <!--android:textColorHint="@drawable/selector"-->
+    <!--android:textColorHint="@drawable/selector"-->
 
     <Button
         android:id="@+id/button2"
@@ -42,11 +42,24 @@
         android:layout_width="266dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:layout_marginBottom="64dp"
         android:text="Ukendt"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="292dp"
+        android:text="Forkerte bogstaver: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 </android.support.constraint.ConstraintLayout>
