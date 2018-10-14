@@ -21,10 +21,10 @@
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textColorHint="@drawable/selector"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+        <!--android:textColorHint="@drawable/selector"-->
 
     <Button
         android:id="@+id/button2"

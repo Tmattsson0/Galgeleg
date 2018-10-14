@@ -1,5 +1,10 @@
 package com.example.thomasmattsson.galgeleg;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -37,6 +42,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         gætteTekst.setOnClickListener(this);
         gætteBogstav.setOnClickListener(this);
 
+
         //Random word
         Random rn = new Random();
         int Rand = rn.nextInt(logik.muligeOrd.size());
@@ -49,6 +55,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
 
         //Gæt knappen
         if (v == button2) { //(event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
