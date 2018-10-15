@@ -195,6 +195,8 @@ public class GalgeLogik {
     }
 
     //Kode jeg har fundet på nettet
+    //Returns a string with only the wrong letters.
+    //TODO Make it ad ", " back in after removing right letters
     public String wrongLetters(String str1, String str2){
         String one = str1;
         String two = str2;
@@ -211,7 +213,8 @@ public class GalgeLogik {
         }
 
         System.out.println("LOL" + s);
+        return s.toString().replace(", ", "");
 
-        return s.toString();
     }
 }
+
