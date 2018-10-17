@@ -194,7 +194,7 @@ public class GalgeLogik {
         return starstr;
     }
 
-    //Kode jeg har fundet på nettet
+    //Kode jeg har fundet på nettet og rettet i
     //Returns a string with only the wrong letters.
     //TODO Make it ad ", " back in after removing right letters
     public String wrongLetters(String str1, String str2){

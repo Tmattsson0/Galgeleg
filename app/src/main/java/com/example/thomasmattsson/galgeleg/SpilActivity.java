@@ -1,15 +1,9 @@
 package com.example.thomasmattsson.galgeleg;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,11 +12,14 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import Data.TextReader;
 import SpilLogik.GalgeLogik;
 
 public class SpilActivity extends AppCompatActivity implements View.OnClickListener {
 
     GalgeLogik logik = new GalgeLogik();
+    TextReader txtrdr = new TextReader();
+
     Button button2;
     TextView gætteTekst, forkerteBogstaver;
     EditText gætteBogstav;
@@ -58,7 +55,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-
         //Gæt knappen
         if (v == button2) { //(event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
             String BogstavGæt = (gætteBogstav.getText().toString());
@@ -66,9 +62,15 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Indtast venligst et bogstav", Toast.LENGTH_SHORT).show();
             }
             logik.gætBogstav(BogstavGæt);
-            forkerteBogstaver.setText("Forkerte bogstaver [" + logik.getAntalForkerteBogstaver() + "]: \n" + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
+            forkerteBogstaver.setText("Forkerte bogstaver [" + logik.getAntalForkerteBogstaver() + " ud af 7]: \n" + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
             gætteTekst.setText(logik.getSynligtOrd());
-//            logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet());
+            gætteBogstav.setText("");
+
+            try {
+                txtrdr.wordsFromText();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             logik.logStatus();
             if (logik.isSpilletErVundet()) {
@@ -76,6 +78,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             }
             if (logik.isSpilletErTabt()) {
                 Toast.makeText(this, "Du tabte!", Toast.LENGTH_SHORT).show();
+
             }
         }
     }
