@@ -10,6 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Random;
 
 import Data.TextReader;
@@ -24,11 +30,38 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     TextView gætteTekst, forkerteBogstaver;
     EditText gætteBogstav;
 
+    int i;
+
+    ArrayList<String> wordArrayList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spil);
+
+        //Read from txt
+        try {
+            InputStream inputStream = getResources().getAssets().open("words.txt");
+
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            i = inputStream.read();
+            while (i != -1)
+            {
+                byteArrayOutputStream.write(i);
+                i = inputStream.read();
+            }
+            inputStream.close();
+//            System.out.println(byteArrayOutputStream.toString());
+//            System.out.println(inputStream.read());
+            for(String word : byteArrayOutputStream.toString().split("\\r?\\n")) {
+                wordArrayList.add(word);
+            }
+            System.out.println(wordArrayList.toString());
+            } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
 
         //FindView
         gætteTekst = (TextView) findViewById(R.id.textView5);
@@ -44,8 +77,8 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
         //Random word
         Random rn = new Random();
-        int Rand = rn.nextInt(logik.muligeOrd.size());
-        String ordet = logik.muligeOrd.get(Rand);
+        int Rand = rn.nextInt(wordArrayList.size());
+        String ordet = wordArrayList.get(Rand);
 
         //Obscure word method
         gætteTekst.setText(logik.getSynligtOrd());
@@ -66,11 +99,12 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             gætteTekst.setText(logik.getSynligtOrd());
             gætteBogstav.setText("");
 
-            try {
-                txtrdr.wordsFromText();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+//            try {
+//                txtrdr.wordsFromText();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+
 
             logik.logStatus();
             if (logik.isSpilletErVundet()) {
