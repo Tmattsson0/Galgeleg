@@ -3,20 +3,13 @@ package com.example.thomasmattsson.galgeleg;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Random;
 
 import Data.TextReader;
 import SpilLogik.GalgeLogik;
@@ -69,7 +62,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             forkerteBogstaver.setText("Forkerte bogstaver [" + logik.getAntalForkerteBogstaver() + " ud af 7]: \n" + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
             gætteTekst.setText(logik.getSynligtOrd());
             gætteBogstav.setText("");
-
 
             logik.logStatus();
             if (logik.isSpilletErVundet()) {
