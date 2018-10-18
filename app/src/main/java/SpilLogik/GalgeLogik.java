@@ -1,7 +1,6 @@
 package SpilLogik;
 
 import java.io.BufferedReader;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -11,9 +10,13 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+import Data.TextReader;
+
 public class GalgeLogik {
     /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
-    public ArrayList<String> muligeOrd = new ArrayList<String>();
+
+    TextReader txtrdr = new TextReader();
+    public ArrayList<String> muligeOrd;
     private String ordet;
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
     private String synligtOrd;
@@ -37,8 +40,6 @@ public class GalgeLogik {
     public void setSpilletErTabt(boolean spilletErTabt) {
         this.spilletErTabt = spilletErTabt;
     }
-
-
 
     public ArrayList<String> getBrugteBogstaver() {
         return brugteBogstaver;
@@ -73,18 +74,21 @@ public class GalgeLogik {
     }
 
 
-    public GalgeLogik() {
-        muligeOrd.add("bil");
-        muligeOrd.add("computer");
-        muligeOrd.add("programmering");
-        muligeOrd.add("motorvej");
-        muligeOrd.add("busrute");
-        muligeOrd.add("gangsti");
-        muligeOrd.add("skovsnegl");
-        muligeOrd.add("solsort");
-        muligeOrd.add("seksten");
-        muligeOrd.add("sytten");
-        muligeOrd.add("atten");
+    public GalgeLogik() throws IOException {
+//        muligeOrd.add("bil");
+//        muligeOrd.add("computer");
+//        muligeOrd.add("programmering");
+//        muligeOrd.add("motorvej");
+//        muligeOrd.add("busrute");
+//        muligeOrd.add("gangsti");
+//        muligeOrd.add("skovsnegl");
+//        muligeOrd.add("solsort");
+//        muligeOrd.add("seksten");
+//        muligeOrd.add("sytten");
+//        muligeOrd.add("atten");
+
+        muligeOrd = txtrdr.wordsFromText();
+
         nulstil();
     }
 
@@ -147,52 +151,52 @@ public class GalgeLogik {
     }
 
 
-    public static String hentUrl(String url) throws IOException {
-        System.out.println("Henter data fra " + url);
-        BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
-        StringBuilder sb = new StringBuilder();
-        String linje = br.readLine();
-        while (linje != null) {
-            sb.append(linje + "\n");
-            linje = br.readLine();
-        }
-        return sb.toString();
-    }
+//    public static String hentUrl(String url) throws IOException {
+//        System.out.println("Henter data fra " + url);
+//        BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
+//        StringBuilder sb = new StringBuilder();
+//        String linje = br.readLine();
+//        while (linje != null) {
+//            sb.append(linje + "\n");
+//            linje = br.readLine();
+//        }
+//        return sb.toString();
+//    }
 
 
-    public void hentOrdFraDr() throws Exception {
-        String data = hentUrl("https://dr.dk");
-        //System.out.println("data = " + data);
+//    public void hentOrdFraDr() throws Exception {
+//        String data = hentUrl("https://dr.dk");
+//        //System.out.println("data = " + data);
+//
+//        data = data.substring(data.indexOf("<body")). // fjern headere
+//                replaceAll("<.+?>", " ").toLowerCase(). // fjern tags
+//                replaceAll("&#198;", "æ"). // erstat HTML-tegn
+//                replaceAll("&#230;", "æ"). // erstat HTML-tegn
+//                replaceAll("&#216;", "ø"). // erstat HTML-tegn
+//                replaceAll("&#248;", "ø"). // erstat HTML-tegn
+//                replaceAll("&oslash;", "ø"). // erstat HTML-tegn
+//                replaceAll("&#229;", "å"). // erstat HTML-tegn
+//                replaceAll("[^a-zæøå]", " "). // fjern tegn der ikke er bogstaver
+//                replaceAll(" [a-zæøå] "," "). // fjern 1-bogstavsord
+//                replaceAll(" [a-zæøå][a-zæøå] "," "); // fjern 2-bogstavsord
+//
+//        System.out.println("data = " + data);
+//        System.out.println("data = " + Arrays.asList(data.split("\\s+")));
+//        muligeOrd.clear();
+//        muligeOrd.addAll(new HashSet<String>(Arrays.asList(data.split(" "))));
+//
+//        System.out.println("muligeOrd = " + muligeOrd);
+//        nulstil();
+//    }
 
-        data = data.substring(data.indexOf("<body")). // fjern headere
-                replaceAll("<.+?>", " ").toLowerCase(). // fjern tags
-                replaceAll("&#198;", "æ"). // erstat HTML-tegn
-                replaceAll("&#230;", "æ"). // erstat HTML-tegn
-                replaceAll("&#216;", "ø"). // erstat HTML-tegn
-                replaceAll("&#248;", "ø"). // erstat HTML-tegn
-                replaceAll("&oslash;", "ø"). // erstat HTML-tegn
-                replaceAll("&#229;", "å"). // erstat HTML-tegn
-                replaceAll("[^a-zæøå]", " "). // fjern tegn der ikke er bogstaver
-                replaceAll(" [a-zæøå] "," "). // fjern 1-bogstavsord
-                replaceAll(" [a-zæøå][a-zæøå] "," "); // fjern 2-bogstavsord
-
-        System.out.println("data = " + data);
-        System.out.println("data = " + Arrays.asList(data.split("\\s+")));
-        muligeOrd.clear();
-        muligeOrd.addAll(new HashSet<String>(Arrays.asList(data.split(" "))));
-
-        System.out.println("muligeOrd = " + muligeOrd);
-        nulstil();
-    }
-
-    public String wordToStarConverter(String word) {
-        String starstr = "";
-
-        for (int i = 0; i < word.length(); i++){
-            starstr += "*";
-        }
-        return starstr;
-    }
+//    public String wordToStarConverter(String word) {
+//        String starstr = "";
+//
+//        for (int i = 0; i < word.length(); i++){
+//            starstr += "*";
+//        }
+//        return starstr;
+//    }
 
     //Kode jeg har fundet på nettet og rettet i
     //Returns a string with only the wrong letters.

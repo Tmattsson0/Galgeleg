@@ -30,38 +30,13 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     TextView gætteTekst, forkerteBogstaver;
     EditText gætteBogstav;
 
-    int i;
-
-    ArrayList<String> wordArrayList = new ArrayList<String>();
+    public SpilActivity() throws IOException {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spil);
-
-        //Read from txt
-        try {
-            InputStream inputStream = getResources().getAssets().open("words.txt");
-
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            i = inputStream.read();
-            while (i != -1)
-            {
-                byteArrayOutputStream.write(i);
-                i = inputStream.read();
-            }
-            inputStream.close();
-//            System.out.println(byteArrayOutputStream.toString());
-//            System.out.println(inputStream.read());
-            for(String word : byteArrayOutputStream.toString().split("\\r?\\n")) {
-                wordArrayList.add(word);
-            }
-            System.out.println(wordArrayList.toString());
-            } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
 
         //FindView
         gætteTekst = (TextView) findViewById(R.id.textView5);
@@ -75,22 +50,18 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         gætteBogstav.setOnClickListener(this);
         forkerteBogstaver.setOnClickListener(this);
 
-        //Random word
-        Random rn = new Random();
-        int Rand = rn.nextInt(wordArrayList.size());
-        String ordet = wordArrayList.get(Rand);
-
         //Obscure word method
         gætteTekst.setText(logik.getSynligtOrd());
-        Log.d(ordet, "onCreate: Ordet er: " + ordet);
+        System.out.println("onCreate: Ordet er: " + logik.getOrdet());
     }
 
     @Override
     public void onClick(View v) {
 
         //Gæt knappen
-        if (v == button2) { //(event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+        if (v == button2) {
             String BogstavGæt = (gætteBogstav.getText().toString());
+
             if (TextUtils.isEmpty(BogstavGæt)) {
                 Toast.makeText(this, "Indtast venligst et bogstav", Toast.LENGTH_SHORT).show();
             }
@@ -99,12 +70,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             gætteTekst.setText(logik.getSynligtOrd());
             gætteBogstav.setText("");
 
-//            try {
-//                txtrdr.wordsFromText();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-
 
             logik.logStatus();
             if (logik.isSpilletErVundet()) {
@@ -112,7 +77,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             }
             if (logik.isSpilletErTabt()) {
                 Toast.makeText(this, "Du tabte!", Toast.LENGTH_SHORT).show();
-
             }
         }
     }

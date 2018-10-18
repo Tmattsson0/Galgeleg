@@ -1,42 +1,36 @@
 package Data;
 
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.util.Log;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.List;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class TextReader {
 
-    public void wordsFromText() throws IOException {
+    public ArrayList<String> wordsFromText() throws IOException, NullPointerException {
+        int i;
+        ArrayList<String> wordArrayList = new ArrayList<String>();
 
-//        try {
-//
-//
-//            File file = new File("/Users/thomasmattsson/Google Drev/DTU/3. Semester/Test.txt");
-//            file.setReadable(true);
-//            System.out.println(file.exists());
-//
-//            BufferedReader br = new BufferedReader(new FileReader(file));
-//
-//            String st;
-//
-//            while ((st = br.readLine()) != null) {
-//                System.out.println(st);
-//            }
-//            br.close();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+        try {
+            String file = "assets/words.txt";
+
+            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(file);
+
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            i = inputStream.read();
+            while (i != -1) {
+                byteArrayOutputStream.write(i);
+                i = inputStream.read();
+            }
+            inputStream.close();
+
+            for (String word : byteArrayOutputStream.toString().split("\\r?\\n")) {
+                wordArrayList.add(word);
+            }
+            System.out.println("Uden for aktivitet" + wordArrayList.toString());
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
         }
+        return (wordArrayList);
     }
+}
