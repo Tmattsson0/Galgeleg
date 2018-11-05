@@ -40,14 +40,14 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
         //FindView
         gætteTekst = (TextView) findViewById(R.id.textView5);
-        button2 = (Button) findViewById(R.id.button2);
-        gætteBogstav = (EditText) findViewById(R.id.editText);
+//        button2 = (Button) findViewById(R.id.button2);
+//        gætteBogstav = (EditText) findViewById(R.id.editText);
         forkerteBogstaver = (TextView) findViewById(R.id.textView);
 
         //OnClick
-        button2.setOnClickListener(this);
+//        button2.setOnClickListener(this);
         gætteTekst.setOnClickListener(this);
-        gætteBogstav.setOnClickListener(this);
+//        gætteBogstav.setOnClickListener(this);
         forkerteBogstaver.setOnClickListener(this);
 
         //Obscure word method
@@ -78,6 +78,18 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             if (logik.isSpilletErTabt()) {
                 Toast.makeText(this, "Du tabte!", Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+
+    public void onBtnClicked(View v) {
+        switch (v.getId()){
+            case R.id.A_button:
+                Toast.makeText(this, "A!", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.B_button:
+                Toast.makeText(this, "B!", Toast.LENGTH_SHORT).show();
+                break;
+
         }
     }
 }
