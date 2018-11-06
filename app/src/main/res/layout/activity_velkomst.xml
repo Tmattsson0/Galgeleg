@@ -5,25 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_gallows"
-    tools:context=".VelkomstActivity">
+    tools:context=".VelkomstActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonStart"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="8dp"
+        android:text="Start"
+        app:layout_constraintBottom_toTopOf="@+id/buttonHighscore"
+        app:layout_constraintStart_toStartOf="@+id/buttonHighscore" />
+
+    <Button
+        android:id="@+id/buttonHighscore"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="11dp"
-        android:layout_marginBottom="150dp"
-        android:text="Start"
+        android:layout_marginBottom="8dp"
+        android:text="Highscore"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSettings"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSettings" />
+
+    <Button
+        android:id="@+id/buttonSettings"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Indstillinger"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewGameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="38dp"
         android:text="Den Store Galgeleg"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="@color/colorAccent"
