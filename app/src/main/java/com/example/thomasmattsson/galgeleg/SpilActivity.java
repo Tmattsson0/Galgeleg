@@ -2,33 +2,23 @@ package com.example.thomasmattsson.galgeleg;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Random;
 
-import Data.TextReader;
 import SpilLogik.GalgeLogik;
 
 public class SpilActivity extends AppCompatActivity implements View.OnClickListener {
 
     GalgeLogik logik = new GalgeLogik();
-    TextReader txtrdr = new TextReader();
 
-    Button button2;
+    Button letterButton;
     TextView gætteTekst, forkerteBogstaver;
-    EditText gætteBogstav;
+    GridLayout letterGrid;
 
     public SpilActivity() throws IOException {
     }
@@ -40,14 +30,11 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
         //FindView
         gætteTekst = (TextView) findViewById(R.id.textView5);
-        button2 = (Button) findViewById(R.id.button2);
-        gætteBogstav = (EditText) findViewById(R.id.editText);
         forkerteBogstaver = (TextView) findViewById(R.id.textView);
+        letterGrid = findViewById(R.id.gridLayout);
 
         //OnClick
-        button2.setOnClickListener(this);
         gætteTekst.setOnClickListener(this);
-        gætteBogstav.setOnClickListener(this);
         forkerteBogstaver.setOnClickListener(this);
 
         //Obscure word method
@@ -57,27 +44,35 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        //for now, empty.
+    }
 
-        //Gæt knappen
-        if (v == button2) {
-            String BogstavGæt = (gætteBogstav.getText().toString());
+    //Button is pressed with method defined in XML
+    public void onBtnClicked(View v) {
+        letterButton = findViewById(v.getId());
+        letterButtonPressed(letterButton);
+    }
 
-            if (TextUtils.isEmpty(BogstavGæt)) {
-                Toast.makeText(this, "Indtast venligst et bogstav", Toast.LENGTH_SHORT).show();
-            }
-            logik.gætBogstav(BogstavGæt);
-            forkerteBogstaver.setText("Forkerte bogstaver [" + logik.getAntalForkerteBogstaver() + " ud af 7]: \n" + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
-            gætteTekst.setText(logik.getSynligtOrd());
-            gætteBogstav.setText("");
+    public void letterButtonPressed(Button button) {
+        //Set a string equal to the getText() from the button.
+        String BogstavGæt = (button.getText().toString().toLowerCase());
 
+        //Calls to the logic.
+        logik.gætBogstav(BogstavGæt);
+        forkerteBogstaver.setText("Forkerte bogstaver ["
+                + logik.getAntalForkerteBogstaver()
+                + " ud af 7]: \n"
+                + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
+        gætteTekst.setText(logik.getSynligtOrd());
+        button.setVisibility(View.GONE);
 
-            logik.logStatus();
-            if (logik.isSpilletErVundet()) {
-                Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();
-            }
-            if (logik.isSpilletErTabt()) {
-                Toast.makeText(this, "Du tabte!", Toast.LENGTH_SHORT).show();
-            }
+        //Current end-game
+        logik.logStatus();
+        if (logik.isSpilletErVundet()) {
+            Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();
+        }
+        if (logik.isSpilletErTabt()) {
+            Toast.makeText(this, "Du tabte!", Toast.LENGTH_SHORT).show();
         }
     }
 }
