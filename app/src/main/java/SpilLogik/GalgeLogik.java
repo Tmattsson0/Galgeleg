@@ -13,7 +13,9 @@ import java.util.Set;
 import Data.TextReader;
 
 public class GalgeLogik {
-    /** AHT afprøvning er muligeOrd synlig på pakkeniveau */
+    /**
+     * AHT afprøvning er muligeOrd synlig på pakkeniveau
+     */
 
     TextReader txtrdr = new TextReader();
     public ArrayList<String> muligeOrd;
@@ -201,18 +203,17 @@ public class GalgeLogik {
     //Kode jeg har fundet på nettet og rettet i
     //Returns a string with only the wrong letters.
     //TODO Make it ad ", " back in after removing right letters
-    public String wrongLetters(String str1, String str2){
+    public String wrongLetters(String str1, String str2) {
         String one = str1;
         String two = str2;
         StringBuilder s = new StringBuilder();
         int a = 0;
 
         Set<Character> set = new HashSet<>();
-        for(char c : two.toCharArray())
+        for (char c : two.toCharArray())
             set.add(c); //add all second string character to set
-        for(char c : one.toCharArray())
-        {
-            if(!set.contains(c)) //check if the character is not one of the character of second string
+        for (char c : one.toCharArray()) {
+            if (!set.contains(c)) //check if the character is not one of the character of second string
                 s.append(c); //append the current character to the pool
         }
 

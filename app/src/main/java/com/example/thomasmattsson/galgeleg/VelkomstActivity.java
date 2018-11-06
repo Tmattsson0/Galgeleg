@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-//Hej
 public class VelkomstActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button button1;
