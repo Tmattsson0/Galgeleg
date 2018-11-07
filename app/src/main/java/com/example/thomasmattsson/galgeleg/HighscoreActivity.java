@@ -26,7 +26,7 @@ public class HighscoreActivity extends AppCompatActivity {
         List<SimpleViewModel> simpleViewModelList = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
-            simpleViewModelList.add(new SimpleViewModel(String.format(Locale.US, "This is item %d", i)));
+            simpleViewModelList.add(new SimpleViewModel(String.format(Locale.US, "%d.", i+1)));
         }
 
         return simpleViewModelList;
