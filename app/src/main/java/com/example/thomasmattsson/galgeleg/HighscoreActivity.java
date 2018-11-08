@@ -16,6 +16,8 @@ import Data.Player;
 
 import static java.util.Comparator.comparing;
 
+//https://www.youtube.com/watch?v=Q2l1Um-cXBQ
+
 public class HighscoreActivity extends AppCompatActivity {
 
     ArrayList<Player> playerList = new ArrayList<Player>();
