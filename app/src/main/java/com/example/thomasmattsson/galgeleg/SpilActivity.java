@@ -74,10 +74,12 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             Intent i = new Intent(this, WonActivity.class);
             i.putExtra(ordet, logik.getOrdet());
             startActivity(i);
+            finish();
         } else if (logik.isSpilletErTabt()){
             Intent i = new Intent(this, LostActivity.class);
             i.putExtra(ordet, logik.getOrdet());
             startActivity(i);
+            finish();
         }
     }
 }

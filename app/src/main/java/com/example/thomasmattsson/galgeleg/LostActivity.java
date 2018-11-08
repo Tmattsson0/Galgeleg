@@ -33,6 +33,7 @@ public class LostActivity extends AppCompatActivity implements View.OnClickListe
         if (v == tryAgain){
             Intent i = new Intent(this, SpilActivity.class);
             startActivity(i);
+            finish();
         }
     }
 }
