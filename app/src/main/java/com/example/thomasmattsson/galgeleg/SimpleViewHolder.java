@@ -5,7 +5,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class SimpleViewHolder extends RecyclerView.ViewHolder {
-    private TextView listRank;
+    private TextView listName;
+    private TextView listScore;
 
     /**
      * The ViewHolder that will be used to display the data in each item shown
@@ -16,7 +17,8 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder {
      */
     public SimpleViewHolder(final View itemView) {
         super(itemView);
-        listRank = (TextView) itemView.findViewById(R.id.listRank);
+        listName = (TextView) itemView.findViewById(R.id.listPlayerName);
+        listScore = (TextView) itemView.findViewById(R.id.listPlayerScore);
     }
 
     /**
@@ -26,6 +28,7 @@ public class SimpleViewHolder extends RecyclerView.ViewHolder {
      *         The viewmodel that contains the data
      */
     public void bindData(final SimpleViewModel viewModel) {
-        listRank.setText(viewModel.getSimpleText());
+        listName.setText(viewModel.getPlayerName());
+        listScore.setText(viewModel.getScore());
     }
 }

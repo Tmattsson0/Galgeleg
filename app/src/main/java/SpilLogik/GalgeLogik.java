@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+import Data.Player;
 import Data.TextReader;
 
 public class GalgeLogik {

@@ -3,16 +3,18 @@ package com.example.thomasmattsson.galgeleg;
 import android.support.annotation.NonNull;
 
 public class SimpleViewModel {
-    private String simpleText;
+    private String playerName;
+    private int score;
 
     /**
      * A viewmodel to hold and modify the data passed into it
      *
-     * @param simpleText
+     * @param playerName
      *         The initial text
      */
-    public SimpleViewModel(@NonNull final String simpleText) {
-        setSimpleText(simpleText);
+    public SimpleViewModel(@NonNull final String playerName, final int score) {
+        setPlayerName(playerName);
+        setPlayerScore(score);
     }
 
     /**
@@ -21,18 +23,24 @@ public class SimpleViewModel {
      * @return A String that represents the text that has been set
      */
     @NonNull
-    public String getSimpleText() {
-        return simpleText;
+    public String getPlayerName() {
+        return playerName;
     }
 
+    public int getScore() {
+        return score;
+    }
     /**
      * While this is a basic project now, we could use this method to modify the
      * text after it was initially set
      *
-     * @param simpleText
+     * @param playerName
      *         The text that will be displayed in the itemview
      */
-    public void setSimpleText(@NonNull final String simpleText) {
-        this.simpleText = simpleText;
+    public void setPlayerName(@NonNull final String playerName) {
+        this.playerName = playerName;
+    }
+    public void setPlayerScore(final int score) {
+        this.score = score;
     }
 }
