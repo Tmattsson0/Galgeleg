@@ -1,12 +1,12 @@
 package com.example.thomasmattsson.galgeleg;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -56,6 +56,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     public void letterButtonPressed(Button button) {
         //Set a string equal to the getText() from the button.
         String BogstavGæt = (button.getText().toString().toLowerCase());
+        String ordet = "ordet";
 
         //Calls to the logic.
         logik.gætBogstav(BogstavGæt);
@@ -69,10 +70,16 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         //Current end-game
         logik.logStatus();
         if (logik.isSpilletErVundet()) {
-            Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();
-        }
-        if (logik.isSpilletErTabt()) {
-            Toast.makeText(this, "Du tabte!", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, WonActivity.class);
+            i.putExtra(ordet, logik.getOrdet());
+            startActivity(i);
+            finish();
+        } else if (logik.isSpilletErTabt()){
+            Intent i = new Intent(this, LostActivity.class);
+            i.putExtra(ordet, logik.getOrdet());
+            startActivity(i);
+            finish();
         }
     }
 }

@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SpilActivity"></activity>
+        <activity android:name=".SpilActivity" />
+        <activity android:name=".HighscoreActivity" />
+        <activity android:name=".WonActivity" />
+        <activity android:name=".LostActivity"></activity>
     </application>
+
 </manifest>
