@@ -17,6 +17,8 @@ import java.net.URL;
  * www.androidhive.info
  */
 
+//https://api.myjson.com/bins/1h427q
+
 //https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
 public class HttpHandler {
 
