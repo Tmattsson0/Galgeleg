@@ -28,10 +28,9 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
 
     //Random score
     Random r = new Random();
-    int low = 1000;
-    int high = 10000;
+    int low = 10000;
+    int high = 100000;
     int result = r.nextInt(high-low) + low;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +73,14 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
             Intent i = new Intent(this, VelkomstActivity.class);
             startActivity(i);
             finish();
-        } else if (v == saveScore){
+        } else if (v == saveScore && !EnterName.getText().toString().equals("")){
             EnterName.getText();
             Player p = new Player(EnterName.getText().toString(), result);
             userScores.add(p);
 
             System.out.println(EnterName.getText());
             saveData();
+            saveScore.setClickable(false);
         }
     }
 
