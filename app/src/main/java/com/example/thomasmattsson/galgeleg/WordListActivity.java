@@ -136,6 +136,5 @@ public class WordListActivity extends AppCompatActivity {
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(mAdapter);
         }
-
     }
 }
