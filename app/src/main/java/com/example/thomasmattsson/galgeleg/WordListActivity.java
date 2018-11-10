@@ -63,7 +63,7 @@ public class WordListActivity extends AppCompatActivity {
             super.onPreExecute();
             // Showing progress dialog
             pDialog = new ProgressDialog(WordListActivity.this);
-            pDialog.setMessage("Please wait...");
+            pDialog.setMessage("Vent venligst...");
             pDialog.setCancelable(false);
             pDialog.show();
 
@@ -85,7 +85,7 @@ public class WordListActivity extends AppCompatActivity {
                     // Getting JSON Array node
                     JSONArray Ordliste = jsonObj.getJSONArray("Ordliste");
 
-                    // looping through All Contacts
+                    // looping through All Words
                     for (int i = 0; i < Ordliste.length(); i++) {
                         JSONObject c = Ordliste.getJSONObject(i);
 
@@ -95,23 +95,6 @@ public class WordListActivity extends AppCompatActivity {
 
                         Words word = new Words(id, ord, definition);
                         wordList.add(word);
-
-//                        // Phone node is JSON Object
-//                        JSONObject phone = c.getJSONObject("phone");
-//                        String mobile = phone.getString("mobile");
-//                        String home = phone.getString("home");
-//                        String office = phone.getString("office");
-
-                        // tmp hash map for single contact
-//                        HashMap<String, String> word = new HashMap<>();
-
-                        // adding each child node to HashMap key => value
-//                        word.put("id", id);
-//                        word.put("ord", ord);
-//                        word.put("definition", definition);
-//                        word.put("mobile", mobile);
-
-                        // adding contact to contact list
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -119,12 +102,11 @@ public class WordListActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
+                                    "Json parsing fejl: " + e.getMessage(),
                                     Toast.LENGTH_LONG)
                                     .show();
                         }
                     });
-
                 }
             } else {
                 Log.e(TAG, "Couldn't get json from server.");
@@ -132,14 +114,12 @@ public class WordListActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
+                                "Kunne ikke få JSON fra server. Kig i LogCat for mulige fej!",
                                 Toast.LENGTH_LONG)
                                 .show();
                     }
                 });
-
             }
-
             return null;
         }
 
