@@ -2,36 +2,32 @@ package com.example.thomasmattsson.galgeleg;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import Data.Player;
 
-import static com.example.thomasmattsson.galgeleg.R.layout.item_simple_itemview;
-
-public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private ArrayList<Player> playerList;
 
-    public SimpleAdapter(ArrayList<Player> playerArrayList) {
+    public MyAdapter(ArrayList<Player> playerArrayList) {
         playerList = playerArrayList;
     }
 
     @NonNull
     @Override
-    public SimpleAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_simple_itemview, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SimpleAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
         holder.mPlayerName.setText(playerList.get(position).getName());
         holder.mPlayerScore.setText(Integer.toString(playerList.get(position).getScore()));
         holder.mPlayerRank.setText(Integer.toString(position+1));

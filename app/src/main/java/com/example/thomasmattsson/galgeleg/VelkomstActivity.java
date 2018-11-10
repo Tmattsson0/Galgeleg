@@ -18,7 +18,7 @@ import static java.util.Comparator.comparing;
 
 public class VelkomstActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button button1, button2, button3;
+    Button buttonStart, buttonHighscore, buttonSettings, buttonWordList;
 
     //Makes the default highscoreboard
     ArrayList<Player> playerList = new ArrayList<>();
@@ -41,14 +41,16 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_velkomst);
 
         //FindView
-        button1 = (Button) findViewById(R.id.buttonStart);
-        button2 = (Button) findViewById(R.id.buttonHighscore);
-        button3 = (Button) findViewById(R.id.buttonSettings);
+        buttonStart = (Button) findViewById(R.id.buttonStart);
+        buttonHighscore = (Button) findViewById(R.id.buttonHighscore);
+        buttonSettings = (Button) findViewById(R.id.buttonSettings);
+        buttonWordList = (Button) findViewById(R.id.buttonWordList);
 
         //OnClick
-        button1.setOnClickListener(this);
-        button2.setOnClickListener(this);
-        button3.setOnClickListener(this);
+        buttonStart.setOnClickListener(this);
+        buttonHighscore.setOnClickListener(this);
+        buttonSettings.setOnClickListener(this);
+        buttonWordList.setOnClickListener(this);
 
         //Clear list
         playerList.clear();
@@ -74,15 +76,19 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        if (v == button1) {
+        if (v == buttonStart) {
             Intent i = new Intent(this, SpilActivity.class);
             startActivity(i);
-        } else if (v == button2){
+        } else if (v == buttonHighscore){
             System.out.println("Trykket på highscore");
             Intent i = new Intent(this, HighscoreActivity.class);
             startActivity(i);
-        } else if (v == button3){
+        } else if (v == buttonSettings){
             System.out.println("Trykket på indstillinger");
+            
+        } else if (v == buttonWordList){
+            Intent i = new Intent(this, WordListActivity.class);
+            startActivity(i);
         }
     }
 
