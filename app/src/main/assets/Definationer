@@ -5,7 +5,6 @@
       "id": "01",
       "ord": "Akvarium",
       "definition": "Gennemsigtig vandbeholder hvori der holdes levende fisk og andre vanddyr, vandplanter m.m."
-
     },
     {
       "id": "02",
@@ -53,129 +52,129 @@
       "definition": "Fødemiddel fremstillet ved at en dej af mel, væske, hævemiddel og evt. andre ingredienser bages i ovn"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "11",
+      "ord": "Dug",
+      "definition": "Stykke stof der bruges til at dække og pynte en bordplade eller for at skåne eller skjule bordpladen"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "12",
+      "ord": "Dybfryser",
+      "definition": "Skabs- eller kummeformet beholder hvor fødevarer kan nedfryses og opbevares i lang tid ved en temperatur under -18 °C"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "13",
+      "ord": "Emballage",
+      "definition": "Materiale (fx plastic, pap eller glas) der bruges som en beskyttende beholder eller indpakning omkring et produkt eller en vare"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "14",
+      "ord": "Fjerkræ",
+      "definition": "Fugle, fx høns, ænder, gæs, kalkuner og duer, der holdes som husdyr med henblik på produktion af kød og æg samt dun og fjer"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "15",
+      "ord": "Fjernsyn",
+      "definition": "Elektronisk massemedie der bringer udsendelser med bevægelige billeder og lyd"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "16",
+      "ord": "Flyttemappe",
+      "definition": "En mappe med former og andre informationer til at melde flytning"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "17",
+      "ord": "Frimærke",
+      "definition": "Lille, firkantet stykke papir med angivelse af en bestemt værdi, udstedt af et nationalt postvæsen og beregnet til at klæbe på breve, pakker m.m. som betaling for forsendelsen"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "18",
+      "ord": "Frugt",
+      "definition": "Sød og kødfuld plantedel som indeholder frø, og som i mange tilfælde kan spises som dessert eller mellemmåltid fx æble, appelsin og banan"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "19",
+      "ord": "Føl",
+      "definition": "Ungen hos heste og visse andre dyr, fx æsler, zebraer, muldyr og giraffer"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "20",
+      "ord": "Får",
+      "definition": "Mellemstor drøvtygger med meget kraftig, oftest hvidlig uldpels lever vildt eller holdes som tamfår (Ovis aries), hvorfra man får kød, uld, skind og mælk"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "21",
+      "ord": "Gaffel",
+      "definition": "Spiseredskab med 2-4 parallelle, let bøjede grene på et skaft"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "22",
+      "ord": "Gardin",
+      "definition": "(Dekorativt) stykke stof som indvendig i et rum hænger ned ved siden af eller foran et vindue for at skærme mod dagslys, for at forhindre at nogen kigger ind, eller som udsmykning ofte ophængt på en stang eller skinne således at det kan trækkes for eller fra efter behov"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "23",
+      "ord": "Girokort",
+      "definition": "Blanket som bruges ved indbetaling på en girokonto eller ved overførsel fra en girokonto til en anden"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "24",
+      "ord": "Glas",
+      "definition": "Hårdt, sprødt og sædvanligvis gennemsigtigt materiale fremstillet ved sammensmeltning af kvartssand, soda og kalk eller andre forbindelser anvendes bl.a. til vinduesruder, spejle og flasker"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "25",
+      "ord": "Gris",
+      "definition": "Klovdyr som har tryne, korte ben og en tyk krop med kort, krøllet hale og tynde, lyse hår, og som holdes som avls- og slagtedyr undertiden især om ungdyret"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "26",
+      "ord": "Gryde",
+      "definition": "Åben, ofte cylindrisk beholder af metal, som regel med to hanke og evt. med låg, til tilberedning af mad på en kogeplade, et gasblus el.lign."
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "27",
+      "ord": "Grøntsag",
+      "definition": "Plante eller plantedel der bruges i madlavningen som selvstændig ret eller som del af en ret fx kartoffel, gulerod, tomat, selleri, porre eller agurk"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "28",
+      "ord": "Gulerod",
+      "definition": "Op til 80 cm høj skærmplante med hvide blomster, findelte blade og pælerod"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "29",
+      "ord": "Hane",
+      "definition": "Han hos tamme høns"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "30",
+      "ord": "Hest",
+      "definition": "Hovdyr med stort, aflangt hoved, lange, slanke ben, manke og en hale med lange hår anvendes især som ride- og trækdyr"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "31",
+      "ord": "Hund",
+      "definition": "Pattedyr som har god lugtesans og hørelse, og som holdes som kæledyr og bruges til jagt m.m."
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "32",
+      "ord": "Hundehvalp",
+      "definition": "Ungen hos hunde"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "33",
+      "ord": "Hvidløg",
+      "definition": "Løgplante som har hvide blomster med et rødligt eller grønligt skær og et hvidt, stærkt duftende og smagende løg der under væksten danner en række kileformede sideløg (fed)"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "34",
+      "ord": "Høne",
+      "definition": "Hun hos tamme høns der holdes som husdyr"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "35",
+      "ord": "Kaffedåse",
+      "definition": "Dåse til opbevaring af kaffe"
     },
     {
       "id": "02",

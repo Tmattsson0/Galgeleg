@@ -35,7 +35,7 @@ public class WordListActivity extends AppCompatActivity {
     RecyclerView.LayoutManager mLayoutManager;
 
     // URL to get contacts JSON
-    private static String url = "https://api.myjson.com/bins/1h427q";
+    private static String url = "https://api.myjson.com/bins/yvro6";
 
     ArrayList<Words> wordList;
 
@@ -91,9 +91,9 @@ public class WordListActivity extends AppCompatActivity {
 
                         String id = c.getString("id");
                         String ord = c.getString("ord");
-                        String Definition = c.getString("Definition");
+                        String definition = c.getString("definition");
 
-                        Words word = new Words(id, ord, Definition);
+                        Words word = new Words(id, ord, definition);
                         wordList.add(word);
 
 //                        // Phone node is JSON Object
@@ -108,7 +108,7 @@ public class WordListActivity extends AppCompatActivity {
                         // adding each child node to HashMap key => value
 //                        word.put("id", id);
 //                        word.put("ord", ord);
-//                        word.put("Definition", Definition);
+//                        word.put("definition", definition);
 //                        word.put("mobile", mobile);
 
                         // adding contact to contact list

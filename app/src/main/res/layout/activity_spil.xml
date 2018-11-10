@@ -8,35 +8,6 @@
     tools:context=".SpilActivity"
     tools:layout_editor_absoluteY="81dp">
 
-
-    <!--<EditText-->
-    <!--android:id="@+id/editText"-->
-    <!--android:layout_width="88dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginBottom="69dp"-->
-    <!--android:ems="10"-->
-    <!--android:hint="Bogstav"-->
-    <!--android:imeOptions="actionDone"-->
-    <!--android:inputType="textPersonName"-->
-    <!--android:maxLength="1"-->
-    <!--android:textAlignment="center"-->
-    <!--android:textColor="@color/colorAccent"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/button2"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent" />-->
-    <!--&lt;!&ndash;android:textColorHint="@drawable/selector"&ndash;&gt;-->
-
-    <!--<Button-->
-    <!--android:id="@+id/button2"-->
-    <!--style="@style/Widget.AppCompat.Button.Colored"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginBottom="32dp"-->
-    <!--android:text="Gæt!"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent" />-->
-
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/gridLayout"
         android:layout_width="364dp"
@@ -342,6 +313,7 @@
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="13dp"
         android:text="Ukendt"
+        android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -356,6 +328,7 @@
         android:layout_marginStart="27dp"
         android:layout_marginBottom="66dp"
         android:text="Forkerte bogstaver: "
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
