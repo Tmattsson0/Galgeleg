@@ -85,7 +85,8 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
             startActivity(i);
         } else if (v == buttonSettings){
             System.out.println("Trykket på indstillinger");
-
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
         } else if (v == buttonWordList){
             Intent i = new Intent(this, WordListActivity.class);
             startActivity(i);

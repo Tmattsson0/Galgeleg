@@ -402,99 +402,104 @@
       "definition": "Elektrisk køkkenredskab forsynet med piskeris, kroge el.lign. der bruges til omrøring eller æltning"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "81",
+      "ord": "Salt",
+      "definition": "Fast, hvidt stof med formlen NaCl der bl.a. bruges som krydderi og som konserveringsmiddel"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "82",
+      "ord": "Skranke",
+      "definition": "Afskærmning i form af et højt, aflangt bord eller et stort, fastmonteret kommode- eller skabslignende møbel der på et offentligt kontor, i en bank, på et posthus el.lign. adskiller en ekspedient og den person der henvender sig for at blive betjent eller vejledt"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "83",
+      "ord": "Sofa",
+      "definition": "Polstret, flerpersoners siddemøbel som har ryg- og armlæn, og som typisk står i en stue, fx sammen med et sofabord og en eller flere lænestole oftest betrukket med stof eller læder"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "84",
+      "ord": "Sofabord",
+      "definition": "Lavt bord der står foran en sofa"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "85",
+      "ord": "Spaghetti",
+      "definition": "Pasta i form af lange, tynde stænger"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "86",
+      "ord": "Spisebord",
+      "definition": "Bord til at spise ved"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "87",
+      "ord": "Stegepande",
+      "definition": "Redskab til at stege med, med stor og flad, som regel cirkulær bund, lav kant og et langt skaft"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "88",
+      "ord": "Stempel",
+      "definition": "Redskab til trykning eller presning af en fast (kort) tekst eller af et bestemt mærke"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "89",
+      "ord": "Stereoanlæg",
+      "definition": "Elektronisk anlæg bestående af forstærker, radio og/el. båndoptager og cd-afspiller samt tilhørende højttalere"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "90",
+      "ord": "Stol",
+      "definition": "Siddemøbel med plads til én person, ofte med fire ben, ryglæn og evt. armlæn"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "91",
+      "ord": "Svin",
+      "definition": "Klovdyr som har tryne, korte ben og en tyk krop med kort, krøllet hale og tynde, lyse hår især betragtet som avls- og slagtedyr"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "92",
+      "ord": "Sølvræv",
+      "definition": "Næsten sort ræv med varierende mængde af hvide hår i pelsen jages og opdrættes pga. pelsen"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "93",
+      "ord": "Tallerken",
+      "definition": "Flad, oftest rund genstand af porcelæn, fajance, metal el.lign. til at spise af"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "94",
+      "ord": "Tedåse",
+      "definition": "En dåse hvori man opbevarer te."
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "95",
+      "ord": "Tomat",
+      "definition": "Enårig urt med behårede blade, små gule blomster og runde, glatte, (gule el.) røde, spiselige frugter"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "96",
+      "ord": "Tyr",
+      "definition": "Voksen han af okseslægten eller visse andre større pattedyr"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "97",
+      "ord": "Tæppe",
+      "definition": "Forholdsvis stort stykke stof som typisk er rektangulært, ofte kraftigt eller varmeisolerende, ternet eller mønstret, og som fx bruges som udsmykning på en væg eller til at lægge over kroppen når man hviler sig"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "98",
+      "ord": "Vase",
+      "definition": "Beholder af fx glas, porcelæn eller ler med flad bund og en åbning foroven, ofte høj, slank og kunstnerisk udformet, evt. dekoreret beregnet til opbevaring af afskårne blomster eller som pyntegenstand"
     },
     {
-      "id": "02",
-      "ord": "",
-      "definition": ""
+      "id": "99",
+      "ord": "Æble",
+      "definition": "Rund rød, gul eller grøn kernefrugt fra æbletræet, med saftigt, sprødt frugtkød"
+    },
+    {
+      "id": "100",
+      "ord": "Æg",
+      "definition": "Rund eller oval genstand som indeholder den hunlige (befrugtede) kønscelle og lægges i en rede el.lign. af bl.a. fugle, krybdyr, fisk og insekter; består normalt af en (hård, sprød) skal omkring en næringssubstans der omgiver selve fostret"
     }
   ]
 }

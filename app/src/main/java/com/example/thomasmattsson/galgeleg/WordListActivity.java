@@ -35,7 +35,7 @@ public class WordListActivity extends AppCompatActivity {
     RecyclerView.LayoutManager mLayoutManager;
 
     // URL to get contacts JSON
-    private static String url = "https://api.myjson.com/bins/yvro6";
+    private static String url = "https://api.myjson.com/bins/kjfpi";
 
     ArrayList<Words> wordList;
 
