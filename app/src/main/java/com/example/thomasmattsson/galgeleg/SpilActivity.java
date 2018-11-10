@@ -34,8 +34,8 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         letterGrid = findViewById(R.id.gridLayout);
 
         //OnClick
-        gætteTekst.setOnClickListener(this);
-        forkerteBogstaver.setOnClickListener(this);
+//        gætteTekst.setOnClickListener(this);
+//        forkerteBogstaver.setOnClickListener(this);
 
         //Obscure word method
         gætteTekst.setText(logik.getSynligtOrd());

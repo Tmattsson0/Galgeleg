@@ -12,10 +12,6 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
-import java.util.stream.Collectors;
 
 import Data.Player;
 
@@ -42,7 +38,7 @@ public class HighscoreActivity extends AppCompatActivity {
         RecyclerView.Adapter mAdapter;
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new SimpleAdapter(playerList);
+        mAdapter = new MyAdapter(playerList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 

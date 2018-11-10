@@ -7,43 +7,46 @@
     tools:context=".WonActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/textViewWon"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="115dp"
-        android:text="Du vandt!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="36sp"
+        android:layout_height="154dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/textViewWhatWord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="Ordet var: ordet"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textViewWon"
-        app:layout_constraintTop_toBottomOf="@+id/textViewWon" />
+        <TextView
+            android:id="@+id/textViewWon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Du vandt!"
+            android:layout_marginTop="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="36sp" />
 
-    <TextView
-        android:id="@+id/textViewScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="Score: 1000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewWhatWord" />
+        <TextView
+            android:id="@+id/textViewWhatWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Ordet var: ordet"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Score: 1000"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editTextName"
@@ -54,6 +57,7 @@
         android:ems="10"
         android:hint="Indtast navn til highscore"
         android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toStartOf="@+id/saveHighScore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -65,6 +69,7 @@
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="88dp"
         android:text="Prøv igen"
+        style="@style/Widget.AppCompat.Button.Colored"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -75,6 +80,7 @@
         android:layout_marginStart="85dp"
         android:layout_marginBottom="88dp"
         android:text="Menu"
+        style="@style/Widget.AppCompat.Button.Colored"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -84,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="13dp"
         android:text="Gem score"
+        style="@style/Widget.AppCompat.Button.Colored"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextName" />
