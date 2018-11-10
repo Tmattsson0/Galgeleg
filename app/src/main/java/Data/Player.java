@@ -1,20 +1,10 @@
 package Data;
 
-import java.util.ArrayList;
 
 public class Player {
 
     private int score;
     private String name;
-//    private ArrayList<Player> playerList = new ArrayList<Player>();
-//
-//    public ArrayList<Player> getPlayerList() {
-//        return playerList;
-//    }
-//
-//    public void setPlayerList(ArrayList<Player> playerList) {
-//        this.playerList = playerList;
-//    }
 
     public Player(String name, int score) {
         this.name = name;
