@@ -4,13 +4,9 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -18,12 +14,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import Data.Player;
 import Data.Words;
 
-import static android.support.v7.widget.RecyclerView.HORIZONTAL;
 
 public class WordListActivity extends AppCompatActivity {
 
@@ -34,7 +27,7 @@ public class WordListActivity extends AppCompatActivity {
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
 
-    // URL to get words JSON
+    //URL to get words myJSON.com api
     private static String url = "https://api.myjson.com/bins/kjfpi";
 
     ArrayList<Words> wordList;
@@ -53,20 +46,19 @@ public class WordListActivity extends AppCompatActivity {
         new GetWords().execute();
     }
 
-    /**
-     * Async task class to get json by making HTTP call
-     */
+    //Async task class to get json by making HTTP call
+    //Adapted from https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
     private class GetWords extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            // Showing progress dialog
+
+            // Showing progress dialog to user
             pDialog = new ProgressDialog(WordListActivity.this);
             pDialog.setMessage("Vent venligst...");
             pDialog.setCancelable(false);
             pDialog.show();
-
         }
 
         @Override
@@ -129,9 +121,8 @@ public class WordListActivity extends AppCompatActivity {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            /**
-             * Updating parsed JSON data into RecyclerView
-             * */
+
+            //Updating parsed JSON data into RecyclerView
             mRecyclerView.setHasFixedSize(true);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(mAdapter);

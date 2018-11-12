@@ -39,10 +39,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         gallow = findViewById(R.id.gallow);
         gallow.setVisibility(gallow.INVISIBLE);
 
-        //OnClick
-//        gætteTekst.setOnClickListener(this);
-//        forkerteBogstaver.setOnClickListener(this);
-
         //Obscure word method
         gætteTekst.setText(logik.getSynligtOrd());
         System.out.println("onCreate: Ordet er: " + logik.getOrdet());
@@ -63,7 +59,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     public void letterButtonPressed(Button button) {
         //Set a string equal to the getText() from the button.
         String BogstavGæt = (button.getText().toString().toLowerCase());
-//        String ordet = "ordet";
 
         //Calls to the logic.
         logik.gætBogstav(BogstavGæt);

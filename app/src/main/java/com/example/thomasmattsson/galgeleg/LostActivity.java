@@ -17,6 +17,7 @@ public class LostActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost);
 
+        //Get the word from previous activity
         String ordet = getIntent().getExtras().getString("ordet");
 
         GameLost = (TextView) findViewById(R.id.textViewLost);

@@ -93,12 +93,13 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    //Save playerList to sharedPreferences
     private void saveData(ArrayList<Player> playerList) {
         this.playerList = playerList;
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        //Only saves the list if it doesn't exist
+        //Only saves the list if it doesn't exist. To reset highscore-list remove "!"
         if(!sharedPreferences.contains("score_list")) {
             Gson gson = new Gson();
             String json = gson.toJson(playerList);

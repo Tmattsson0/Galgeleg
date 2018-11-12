@@ -13,13 +13,13 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 /**
+ * This class was taken from the following:
  * Created by Ravi Tamada on 01/09/16.
  * www.androidhive.info
+ * https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
  */
 
-//https://api.myjson.com/bins/1h427q
 
-//https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
 public class HttpHandler {
 
     private static final String TAG = HttpHandler.class.getSimpleName();
