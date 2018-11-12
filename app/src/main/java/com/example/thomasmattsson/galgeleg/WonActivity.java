@@ -27,6 +27,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
     Button tryAgain, menuButton, saveScore;
 
     //Random score
+    //TODO Implement real scoring system
     Random r = new Random();
     int low = 10000;
     int high = 100000;
@@ -80,13 +81,14 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
             EnterName.getText();
             Player p = new Player(EnterName.getText().toString(), result);
             userScores.add(p);
-
             System.out.println(EnterName.getText());
             saveData();
+            //Disable button so you can't double entry
             saveScore.setClickable(false);
         }
     }
 
+    //Save the new list to sharedPreferences
     private void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -96,6 +98,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
         editor.apply();
     }
 
+    //Load the current list to manipulate as arraylist in java.
     private ArrayList<Player> loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();

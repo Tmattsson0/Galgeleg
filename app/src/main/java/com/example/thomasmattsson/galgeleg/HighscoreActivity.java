@@ -17,13 +17,11 @@ import Data.Player;
 
 import static java.util.Comparator.comparing;
 
-//https://www.youtube.com/watch?v=Q2l1Um-cXBQ
 
 public class HighscoreActivity extends AppCompatActivity {
 
     ArrayList<Player> playerList;
     RecyclerView mRecyclerView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +39,6 @@ public class HighscoreActivity extends AppCompatActivity {
         mAdapter = new MyAdapter(playerList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-
-
-
     }
 
     private ArrayList<Player> loadData(){

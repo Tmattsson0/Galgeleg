@@ -204,7 +204,6 @@ public class GalgeLogik {
 
         System.out.println("LOL" + s);
         return s.toString().replace(", ", "");
-
     }
 }
 
