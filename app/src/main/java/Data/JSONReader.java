@@ -28,7 +28,7 @@ public class JSONReader {
 
                     String ord = c.getString("ord");
                     System.out.println(ord);
-                    wordArrayList.add(ord);
+                    wordArrayList.add(ord.toLowerCase());
                 }
             } catch (final JSONException e) {
                 e.printStackTrace();
