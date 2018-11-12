@@ -18,4 +18,3 @@ Features overblik:
 - Find på algoritme til highscore.
 - Animation på starskærm og i spillet.
 - Implementer mulighed for at tilføje bruger-bestemte ord.
-- 
