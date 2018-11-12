@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -19,6 +20,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     Button letterButton;
     TextView gætteTekst, forkerteBogstaver;
     GridLayout letterGrid;
+    ImageView gallow;
 
     int count = 0;
 
@@ -34,6 +36,8 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         gætteTekst = (TextView) findViewById(R.id.textView5);
         forkerteBogstaver = (TextView) findViewById(R.id.textView);
         letterGrid = findViewById(R.id.gridLayout);
+        gallow = findViewById(R.id.gallow);
+        gallow.setVisibility(gallow.INVISIBLE);
 
         //OnClick
 //        gætteTekst.setOnClickListener(this);
@@ -69,6 +73,35 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
                 + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
         gætteTekst.setText(logik.getSynligtOrd());
         button.setVisibility(View.GONE);
+        gallow.setVisibility(gallow.VISIBLE);
+
+        switch (logik.getAntalForkerteBogstaver()){
+            case 1:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty);
+                break;
+            case 2:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty_1);
+                break;
+            case 3:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty_2);
+                break;
+            case 4:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty_3);
+                break;
+            case 5:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty_4);
+                break;
+            case 6:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty_5);
+                break;
+            case 7:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty_6);
+                break;
+            default:
+                gallow.setImageResource(R.mipmap.ic_gallow_empty);
+                gallow.setVisibility(gallow.INVISIBLE);
+                break;
+        }
 
         //Current end-game
         logik.logStatus();
