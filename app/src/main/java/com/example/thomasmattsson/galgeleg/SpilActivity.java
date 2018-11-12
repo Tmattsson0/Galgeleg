@@ -73,6 +73,8 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
                 + logik.wrongLetters(logik.getBrugteBogstaver().toString(), logik.getOrdet()));
         gætteTekst.setText(logik.getSynligtOrd());
         button.setVisibility(View.GONE);
+
+        //Update the gallow and stick man
         gallow.setVisibility(gallow.VISIBLE);
 
         switch (logik.getAntalForkerteBogstaver()){
@@ -106,8 +108,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         //Current end-game
         logik.logStatus();
         if (logik.isSpilletErVundet()) {
-//            Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();
-//            String transferCount = "transferCount";
             Intent i = new Intent(this, WonActivity.class);
             i.putExtra("ordet", logik.getOrdet());
             i.putExtra("transferCount", count);

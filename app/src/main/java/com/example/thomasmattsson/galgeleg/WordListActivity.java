@@ -114,7 +114,7 @@ public class WordListActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(getApplicationContext(),
-                                "Kunne ikke få JSON fra server. Kig i LogCat for mulige fej!",
+                                "Kunne ikke få JSON fra server. Kig i LogCat for mulige fejl!",
                                 Toast.LENGTH_LONG)
                                 .show();
                     }
