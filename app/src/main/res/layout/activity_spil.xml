@@ -8,44 +8,314 @@
     tools:context=".SpilActivity"
     tools:layout_editor_absoluteY="81dp">
 
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="88dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="69dp"
-        android:ems="10"
-        android:hint="Bogstav"
-        android:imeOptions="actionDone"
-        android:inputType="textPersonName"
-        android:maxLength="1"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-    <!--android:textColorHint="@drawable/selector"-->
-
-    <Button
-        android:id="@+id/button2"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Gæt!"
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridLayout"
+        android:layout_width="364dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:columnCount="7"
+        android:orientation="horizontal"
+        android:rowCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gallow">
+
+        <Button
+            android:id="@+id/A_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="A" />
+
+        <Button
+            android:id="@+id/B_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="B" />
+
+        <Button
+            android:id="@+id/C_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/D_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="D" />
+
+        <Button
+            android:id="@+id/E_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="E" />
+
+        <Button
+            android:id="@+id/F_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="F" />
+
+        <Button
+            android:id="@+id/G_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="G" />
+
+        <Button
+            android:id="@+id/H_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="H" />
+
+        <Button
+            android:id="@+id/I_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="I" />
+
+        <Button
+            android:id="@+id/J_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="J" />
+
+        <Button
+            android:id="@+id/K_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="K" />
+
+        <Button
+            android:id="@+id/L_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="L" />
+
+        <Button
+            android:id="@+id/M_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="1"
+            android:layout_column="5"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="M" />
+
+        <Button
+            android:id="@+id/N_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="1"
+            android:layout_column="6"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="N" />
+
+        <Button
+            android:id="@+id/O_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="O" />
+
+        <Button
+            android:id="@+id/P_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="P" />
+
+        <Button
+            android:id="@+id/Q_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="Q" />
+
+        <Button
+            android:id="@+id/R_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="R" />
+
+        <Button
+            android:id="@+id/S_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="S" />
+
+        <Button
+            android:id="@+id/T_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="2"
+            android:layout_column="5"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="T" />
+
+        <Button
+            android:id="@+id/U_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="2"
+            android:layout_column="6"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="U" />
+
+        <Button
+            android:id="@+id/V_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="V" />
+
+        <Button
+            android:id="@+id/X_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="X" />
+
+        <Button
+            android:id="@+id/Y_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="Y" />
+
+        <Button
+            android:id="@+id/Z_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="Z" />
+
+        <Button
+            android:id="@+id/Æ_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="3"
+            android:layout_column="4"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="Æ" />
+
+        <Button
+            android:id="@+id/Ø_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="3"
+            android:layout_column="5"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="Ø" />
+
+        <Button
+            android:id="@+id/Å_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="52dp"
+            android:layout_row="3"
+            android:layout_column="6"
+            android:width="8dp"
+            android:onClick="onBtnClicked"
+            android:text="Å" />
+
+    </GridLayout>
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="266dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="13dp"
         android:text="Ukendt"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,12 +324,25 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="119dp"
-        android:layout_height="122dp"
+        android:layout_height="0dp"
         android:layout_marginStart="27dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="66dp"
         android:text="Forkerte bogstaver: "
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/gallow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_gallow_empty" />
 
 </android.support.constraint.ConstraintLayout>
