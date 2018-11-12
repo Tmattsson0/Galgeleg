@@ -1,24 +1,19 @@
 package SpilLogik;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import Data.Player;
-import Data.TextReader;
+import Data.JSONReader;
 
 public class GalgeLogik {
     /**
      * AHT afprøvning er muligeOrd synlig på pakkeniveau
      */
 
-    TextReader txtrdr = new TextReader();
+    JSONReader txtrdr = new JSONReader();
     public ArrayList<String> muligeOrd;
     private String ordet;
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
