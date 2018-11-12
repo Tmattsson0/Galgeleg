@@ -16,6 +16,8 @@ import Data.Player;
 
 import static java.util.Comparator.comparing;
 
+
+//OBS! git: https://github.com/Tmattsson0/Galgeleg
 public class VelkomstActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button buttonStart, buttonHighscore, buttonSettings, buttonWordList;
