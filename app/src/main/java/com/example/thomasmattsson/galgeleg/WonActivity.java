@@ -23,7 +23,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
     ArrayList<Player> userScores;
 
     EditText EnterName;
-    TextView GameWon, whatWord, score;
+    TextView GameWon, whatWord, score, howManyTries;
     Button tryAgain, menuButton, saveScore;
 
     //Random score
@@ -45,11 +45,13 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
 
         //Getting word from previous activity
         String ordet = getIntent().getExtras().getString("ordet");
+        int count = getIntent().getExtras().getInt("transferCount");
 
         EnterName = (EditText) findViewById(R.id.editTextName);
         GameWon = (TextView) findViewById(R.id.textViewWon);
         whatWord = (TextView) findViewById(R.id.textViewWhatWord);
         score = (TextView) findViewById(R.id.textViewScore);
+        howManyTries = (TextView) findViewById(R.id.howManyTries);
         tryAgain = (Button) findViewById(R.id.tryAgain);
         menuButton = (Button) findViewById(R.id.backToMenu);
         saveScore = (Button) findViewById(R.id.saveHighScore);
@@ -61,6 +63,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
 
         whatWord.setText("Ordet var: " + ordet);
         score.setText("Score: " + Integer.toString(result) + " pt.");
+        howManyTries.setText("Antal forsøg: " + Integer.toString(count));
     }
 
     @Override

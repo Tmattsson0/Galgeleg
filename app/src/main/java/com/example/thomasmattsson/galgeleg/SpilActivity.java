@@ -20,6 +20,8 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     TextView gætteTekst, forkerteBogstaver;
     GridLayout letterGrid;
 
+    int count = 0;
+
     public SpilActivity() throws IOException {
     }
 
@@ -51,12 +53,13 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     public void onBtnClicked(View v) {
         letterButton = findViewById(v.getId());
         letterButtonPressed(letterButton);
+        count++;
     }
 
     public void letterButtonPressed(Button button) {
         //Set a string equal to the getText() from the button.
         String BogstavGæt = (button.getText().toString().toLowerCase());
-        String ordet = "ordet";
+//        String ordet = "ordet";
 
         //Calls to the logic.
         logik.gætBogstav(BogstavGæt);
@@ -71,13 +74,15 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         logik.logStatus();
         if (logik.isSpilletErVundet()) {
 //            Toast.makeText(this, "Du vandt!", Toast.LENGTH_SHORT).show();
+//            String transferCount = "transferCount";
             Intent i = new Intent(this, WonActivity.class);
-            i.putExtra(ordet, logik.getOrdet());
+            i.putExtra("ordet", logik.getOrdet());
+            i.putExtra("transferCount", count);
             startActivity(i);
             finish();
         } else if (logik.isSpilletErTabt()){
             Intent i = new Intent(this, LostActivity.class);
-            i.putExtra(ordet, logik.getOrdet());
+            i.putExtra("ordet", logik.getOrdet());
             startActivity(i);
             finish();
         }

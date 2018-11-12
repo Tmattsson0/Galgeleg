@@ -78,17 +78,6 @@ public class GalgeLogik {
 
 
     public GalgeLogik() throws IOException {
-//        muligeOrd.add("bil");
-//        muligeOrd.add("computer");
-//        muligeOrd.add("programmering");
-//        muligeOrd.add("motorvej");
-//        muligeOrd.add("busrute");
-//        muligeOrd.add("gangsti");
-//        muligeOrd.add("skovsnegl");
-//        muligeOrd.add("solsort");
-//        muligeOrd.add("seksten");
-//        muligeOrd.add("sytten");
-//        muligeOrd.add("atten");
 
         muligeOrd = txtrdr.wordsFromText();
 
