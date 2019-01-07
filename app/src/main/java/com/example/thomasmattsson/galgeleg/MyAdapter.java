@@ -22,20 +22,36 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @NonNull
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.highscore_itemview, parent, false);
+        View view = LayoutInflater
+                .from(parent.getContext())
+                .inflate(R.layout.highscore_carditemview, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
-        holder.mPlayerName.setText(playerList.get(position).getName());
-        holder.mPlayerScore.setText(Integer.toString(playerList.get(position).getScore()));
-        holder.mPlayerRank.setText(Integer.toString(position+1));
+//        holder.mPlayerName.setText(playerList.get(position).getName());
+//        holder.mPlayerScore.setText(Integer.toString(playerList.get(position).getScore()));
+//        holder.mPlayerRank.setText(Integer.toString(position+1));
+
+        Player player = playerList.get(position);
+
+        holder.bind(player, position);
+
+        holder.itemView.setOnClickListener(v -> {
+            boolean expanded = player.isExpanded();
+            player.setExpanded(!expanded);
+            notifyItemChanged(position);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return playerList.size();
+        if (playerList == null){
+            return 0;
+        } else {
+            return playerList.size();
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -43,6 +59,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public TextView mPlayerName;
         public TextView mPlayerScore;
         public TextView mPlayerRank;
+        public TextView mPlayerTime;
+        public TextView mPlayerDate;
+
+        private View subItem;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,6 +70,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             mPlayerName = (TextView) itemView.findViewById(R.id.listPlayerName);
             mPlayerScore = (TextView) itemView.findViewById(R.id.listPlayerScore);
             mPlayerRank = (TextView) itemView.findViewById(R.id.listRank);
+            mPlayerTime = (TextView) itemView.findViewById(R.id.listPlayerTime);
+            mPlayerDate = (TextView) itemView.findViewById(R.id.listPlayerDate);
+            subItem = itemView.findViewById(R.id.sub_item);
+
+        }
+        private void bind(Player player, int position) {
+            boolean expanded = player.isExpanded();
+
+            subItem.setVisibility(expanded ? View.VISIBLE : View.GONE);
+
+            mPlayerName.setText(player.getName());
+            mPlayerScore.setText("Score: " + player.getScore());
+            mPlayerRank.setText(Integer.toString(position+1));
+            mPlayerTime.setText("1000 s");
+            mPlayerDate.setText("23/04/96");
         }
     }
 }

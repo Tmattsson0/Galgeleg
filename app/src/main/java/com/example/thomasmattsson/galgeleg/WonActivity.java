@@ -94,7 +94,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
             finish();
         } else if (v == saveScore && !EnterName.getText().toString().equals("")){
             EnterName.getText();
-            Player p = new Player(EnterName.getText().toString(), result);
+            Player p = new Player(EnterName.getText().toString(), result, 111, "23/04/96");
             userScores.add(p);
             System.out.println(EnterName.getText());
             saveData();

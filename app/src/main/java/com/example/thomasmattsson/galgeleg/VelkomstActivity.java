@@ -22,18 +22,18 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
 
     //Makes the default highscoreboard
     ArrayList<Player> playerList = new ArrayList<>();
-    Player player1 = new Player("Thomas$", 50000);
-    Player player2 = new Player("Mikkel$", 14124);
-    Player player3 = new Player("Lars$", 25415);
-    Player player4 = new Player("Fie$", 15352);
-    Player player5 = new Player("Søren$", 78634);
-    Player player6 = new Player("Julie$", 42542);
-    Player player7 = new Player("Bergitte$", 78374);
-    Player player8 = new Player("Theodore$", 78375);
-    Player player9 = new Player("Alex$", 45348);
-    Player player10 = new Player("Petra$", 12348);
-    Player player11 = new Player("Børge$", 74374);
-    Player player12 = new Player("Kasper$", 47527);
+    Player player1 = new Player("Thomas$", 50000, 11, "12");
+    Player player2 = new Player("Mikkel$", 14124, 11, "12");
+    Player player3 = new Player("Lars$", 25415, 11, "12");
+    Player player4 = new Player("Fie$", 15352, 11, "12");
+    Player player5 = new Player("Søren$", 78634, 11, "12");
+    Player player6 = new Player("Julie$", 42542, 11, "12");
+    Player player7 = new Player("Bergitte$", 78374, 11, "12");
+    Player player8 = new Player("Theodore$", 78375, 11, "12");
+    Player player9 = new Player("Alex$", 45348, 11, "12");
+    Player player10 = new Player("Petra$", 12348, 11, "12");
+    Player player11 = new Player("Børge$", 74374, 11, "12");
+    Player player12 = new Player("Kasper$", 47527, 11, "12");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
