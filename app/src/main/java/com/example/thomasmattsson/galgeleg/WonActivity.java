@@ -2,8 +2,9 @@ package com.example.thomasmattsson.galgeleg;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,12 +27,15 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
     TextView GameWon, whatWord, score, howManyTries;
     Button tryAgain, menuButton, saveScore;
 
+    MediaPlayer mp;
+
     //Random score
     //TODO Implement real scoring system
     Random r = new Random();
     int low = 10000;
     int high = 100000;
     int result = r.nextInt(high-low) + low;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +69,18 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
         whatWord.setText("Ordet var: " + ordet);
         score.setText("Score: " + Integer.toString(result) + " pt.");
         howManyTries.setText("Antal forsøg: " + Integer.toString(count));
+
+        mp = MediaPlayer.create(this, R.raw.cheering);
+        mp.start();
+
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        public void onCompletion(MediaPlayer mp) {
+            mp.release();
+            }
+        });
     }
+
+
 
     @Override
     public void onClick(View v) {
