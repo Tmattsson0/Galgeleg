@@ -83,8 +83,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             mPlayerName.setText(player.getName());
             mPlayerScore.setText("Score: " + player.getScore());
             mPlayerRank.setText(Integer.toString(position+1));
-            mPlayerTime.setText("1000 s");
-            mPlayerDate.setText("23/04/96");
+            mPlayerTime.setText("Tid: " + Integer.toString(player.getTime()) + " s");
+            mPlayerDate.setText("Dato: " + player.getDate());
         }
     }
 }

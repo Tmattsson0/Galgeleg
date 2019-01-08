@@ -22,18 +22,18 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
 
     //Makes the default highscoreboard
     ArrayList<Player> playerList = new ArrayList<>();
-    Player player1 = new Player("Thomas$", 50000, 11, "12");
-    Player player2 = new Player("Mikkel$", 14124, 11, "12");
-    Player player3 = new Player("Lars$", 25415, 11, "12");
-    Player player4 = new Player("Fie$", 15352, 11, "12");
-    Player player5 = new Player("Søren$", 78634, 11, "12");
-    Player player6 = new Player("Julie$", 42542, 11, "12");
-    Player player7 = new Player("Bergitte$", 78374, 11, "12");
-    Player player8 = new Player("Theodore$", 78375, 11, "12");
-    Player player9 = new Player("Alex$", 45348, 11, "12");
-    Player player10 = new Player("Petra$", 12348, 11, "12");
-    Player player11 = new Player("Børge$", 74374, 11, "12");
-    Player player12 = new Player("Kasper$", 47527, 11, "12");
+    Player player1 = new Player("Thomas$", 50000, 62, "12/06/2017");
+    Player player2 = new Player("Mikkel$", 14124, 14, "16/01/2018");
+    Player player3 = new Player("Lars$", 25415, 511, "07/11/2016");
+    Player player4 = new Player("Fie$", 15352, 635, "03/07/2015");
+    Player player5 = new Player("Søren$", 78634, 231, "08/01/2019");
+    Player player6 = new Player("Julie$", 42542, 110, "05/03/2018");
+    Player player7 = new Player("Bergitte$", 78374, 90, "07/03/2016");
+    Player player8 = new Player("Theodore$", 78375, 60, "30/12/2017");
+    Player player9 = new Player("Alex$", 45348, 52, "12/09/2018");
+    Player player10 = new Player("Petra$", 12348, 17, "24/12/2016");
+    Player player11 = new Player("Børge$", 74374, 38, "23/04/2017");
+    Player player12 = new Player("Kasper$", 47527, 645, "28/02/2018");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

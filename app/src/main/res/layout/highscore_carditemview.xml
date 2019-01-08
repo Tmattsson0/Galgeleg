@@ -6,10 +6,14 @@
     android:layout_height="wrap_content"
     android:background="#fafafa"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
-    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
     android:paddingLeft="16dp"
-    android:paddingStart="16dp">
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    app:cardBackgroundColor="@color/cardview_light_background"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp"
+    app:contentPadding="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,25 +27,24 @@
 
             <TextView
                 android:id="@+id/listRank"
-                android:layout_width="0dp"
+                android:layout_width="47dp"
                 android:layout_height="0dp"
-                android:layout_marginEnd="239dp"
-                android:text="1"
+                android:text="10"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="36sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/listPlayerScore"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/listPlayerName"
-                android:layout_width="88dp"
+                android:layout_width="184dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="44dp"
-                android:text="Thomas"
-                android:textAlignment="center"
+                android:layout_marginStart="54dp"
+                android:text="Megetlangtnavn"
+                android:textAlignment="viewStart"
                 android:textColor="#000"
                 android:textSize="22sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/listRank"
@@ -51,7 +54,7 @@
                 android:id="@+id/listPlayerScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="20dp"
                 android:text="10000 pt."
                 app:layout_constraintBaseline_toBaselineOf="@+id/listPlayerName"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -60,7 +63,7 @@
         <View
             android:id="@+id/item_divider"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0dp"
             android:layout_marginBottom="16dp"
             android:background="#D3D3D3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,22 +74,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/listPlayerTime"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                tools:text="Time: 106 s" />
+                android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/listPlayerDate"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/listPlayerTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    tools:text="Time: 106 s" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                tools:text="Date: 23/04/96" />
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/listPlayerDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    tools:text="Date: 23/04/96" />
+            </RelativeLayout>
+
         </LinearLayout>
     </LinearLayout>
-
 </android.support.v7.widget.CardView>

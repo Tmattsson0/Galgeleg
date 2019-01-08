@@ -92,6 +92,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
             Intent i = new Intent(this, VelkomstActivity.class);
             startActivity(i);
             finish();
+            //Todo: Make date and time real.
         } else if (v == saveScore && !EnterName.getText().toString().equals("")){
             EnterName.getText();
             Player p = new Player(EnterName.getText().toString(), result, 111, "23/04/96");
