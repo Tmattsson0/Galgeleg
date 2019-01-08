@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.Set;
 
 import Data.JSONReader;
+import Data.Words;
 
 public class GalgeLogik {
     /**
@@ -14,7 +15,7 @@ public class GalgeLogik {
      */
 
     JSONReader txtrdr = new JSONReader();
-    public ArrayList<String> muligeOrd;
+    public ArrayList<Words> muligeOrd;
     private String ordet;
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
     private String synligtOrd;
@@ -82,7 +83,7 @@ public class GalgeLogik {
         antalForkerteBogstaver = 0;
         spilletErVundet = false;
         spilletErTabt = false;
-        ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
+        ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size())).getWord().toLowerCase();
         opdaterSynligtOrd();
     }
 

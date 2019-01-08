@@ -18,7 +18,7 @@ import static java.util.Comparator.comparing;
 
 public class VelkomstActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonStart, buttonHighscore, buttonSettings, buttonWordList;
+    Button buttonStart, buttonHighscore, buttonSettings, buttonWordList, buttonQuickstart;
 
     //Makes the default highscoreboard
     ArrayList<Player> playerList = new ArrayList<>();
@@ -45,12 +45,14 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         buttonHighscore = (Button) findViewById(R.id.buttonHighscore);
         buttonSettings = (Button) findViewById(R.id.buttonSettings);
         buttonWordList = (Button) findViewById(R.id.buttonWordList);
+        buttonQuickstart = (Button) findViewById(R.id.customStart);
 
         //OnClick
         buttonStart.setOnClickListener(this);
         buttonHighscore.setOnClickListener(this);
         buttonSettings.setOnClickListener(this);
         buttonWordList.setOnClickListener(this);
+        buttonQuickstart.setOnClickListener(this);
 
         //Clear list
         playerList.clear();
@@ -90,6 +92,9 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         } else if (v == buttonWordList){
             Intent i = new Intent(this, WordListActivity.class);
             startActivity(i);
+        } else if (v == buttonQuickstart){
+           BottomSheetDialog bottomSheet = new BottomSheetDialog();
+           bottomSheet.show(getSupportFragmentManager(), "bottomSheet");
         }
     }
 
