@@ -19,10 +19,28 @@ public class GalgeLogik {
     private String ordet;
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
     private String synligtOrd;
+    private String customWord;
     private int antalForkerteBogstaver;
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
+    private boolean isCustomWord;
+
+    public String getCustomWord() {
+        return customWord;
+    }
+
+    public void setCustomWord(String customWord) {
+        this.customWord = customWord;
+    }
+
+    public boolean isCustomWord() {
+        return isCustomWord;
+    }
+
+    public void setIsCustomWord(boolean customWord) {
+        this.isCustomWord = customWord;
+    }
 
     public boolean isSpilletErVundet() {
         return spilletErVundet;
@@ -83,7 +101,12 @@ public class GalgeLogik {
         antalForkerteBogstaver = 0;
         spilletErVundet = false;
         spilletErTabt = false;
-        ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size())).getWord().toLowerCase();
+        if(!isCustomWord()){
+            ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size())).getWord().toLowerCase();
+        } else {
+            ordet = customWord;
+        }
+        setIsCustomWord(false);
         opdaterSynligtOrd();
     }
 
@@ -154,6 +177,11 @@ public class GalgeLogik {
 
         System.out.println("LOL" + s);
         return s.toString().replace(", ", "");
+    }
+
+    public void customWordStart(String customWord) {
+        this.customWord = customWord;
+        setIsCustomWord(true);
     }
 }
 
