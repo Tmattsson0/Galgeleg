@@ -38,10 +38,7 @@ public class JSONReader {
         }
             return wordArrayList;
     }
-
-
-
-
+    
     public String loadJSONFromAsset() {
         String json = null;
         String file = "assets/words.json";
