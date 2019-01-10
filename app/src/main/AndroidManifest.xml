@@ -25,9 +25,6 @@
         <activity android:name=".WonActivity" />
         <activity android:name=".LostActivity" />
         <activity android:name=".WordListActivity" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>
