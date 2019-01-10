@@ -20,7 +20,7 @@ import static java.util.Comparator.comparing;
 
 public class VelkomstActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonStart, buttonHighscore, buttonSettings, buttonWordList, buttonQuickstart;
+    Button buttonStart, buttonHighscore, buttonWordList, buttonQuickstart;
 
     Singleton p = Singleton.getInstance();
 
@@ -53,14 +53,12 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         //FindView
         buttonStart = (Button) findViewById(R.id.buttonStart);
         buttonHighscore = (Button) findViewById(R.id.buttonHighscore);
-        buttonSettings = (Button) findViewById(R.id.buttonSettings);
         buttonWordList = (Button) findViewById(R.id.buttonWordList);
         buttonQuickstart = (Button) findViewById(R.id.customStart);
 
         //OnClick
         buttonStart.setOnClickListener(this);
         buttonHighscore.setOnClickListener(this);
-        buttonSettings.setOnClickListener(this);
         buttonWordList.setOnClickListener(this);
         buttonQuickstart.setOnClickListener(this);
 
@@ -94,10 +92,6 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         } else if (v == buttonHighscore){
             System.out.println("Trykket på highscore");
             Intent i = new Intent(this, HighscoreActivity.class);
-            startActivity(i);
-        } else if (v == buttonSettings){
-            System.out.println("Trykket på indstillinger");
-            Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
         } else if (v == buttonWordList){
             Intent i = new Intent(this, WordListActivity.class);

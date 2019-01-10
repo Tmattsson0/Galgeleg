@@ -28,7 +28,7 @@
             <Button
                 android:id="@+id/customStart"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
+                android:layout_width="105dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:text="Vælg ord" />
@@ -59,13 +59,6 @@
             android:layout_gravity="center"
             android:text="Highscore" />
 
-        <Button
-            android:id="@+id/buttonSettings"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Indstillinger" />
     </LinearLayout>
 
     <TextView
