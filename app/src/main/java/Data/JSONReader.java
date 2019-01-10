@@ -40,7 +40,7 @@ public class JSONReader {
     }
     
     public String loadJSONFromAsset() {
-        String json = null;
+        String json;
         String file = "assets/words.json";
 
         try {
