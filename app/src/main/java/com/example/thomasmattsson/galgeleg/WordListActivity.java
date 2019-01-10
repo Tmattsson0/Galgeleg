@@ -1,5 +1,6 @@
 package com.example.thomasmattsson.galgeleg;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -48,6 +49,7 @@ public class WordListActivity extends AppCompatActivity {
 
     //Async task class to get json by making HTTP call
     //Adapted from https://www.androidhive.info/2012/01/android-json-parsing-tutorial/
+    @SuppressLint("StaticFieldLeak")
     private class GetWords extends AsyncTask<Void, Void, Void> {
 
         @Override

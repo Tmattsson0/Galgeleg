@@ -30,8 +30,8 @@
                 android:layout_width="47dp"
                 android:layout_height="0dp"
                 android:text="10"
+                android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
-                android:textColor="#000"
                 android:textSize="36sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
                 android:layout_marginStart="54dp"
                 android:text="Megetlangtnavn"
                 android:textAlignment="viewStart"
-                android:textColor="#000"
+                android:textColor="@color/colorAccent"
                 android:textSize="22sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/listRank"
                 app:layout_constraintStart_toStartOf="parent" />
