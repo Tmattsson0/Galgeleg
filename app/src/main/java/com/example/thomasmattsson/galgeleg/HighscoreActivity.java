@@ -28,19 +28,22 @@ public class HighscoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
 
+        //Load playerList from sharedPreferences and sorting them.
         playerList = loadData();
         Collections.sort(playerList, comparing(Player::getScore).reversed());
 
+        //Setting the RecyclerView
         mRecyclerView = (RecyclerView) findViewById(R.id.simple_recyclerview);
         RecyclerView.LayoutManager mLayoutManager;
         RecyclerView.Adapter mAdapter;
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new MyAdapter(playerList);
+        mAdapter = new HighscoreAdapter(playerList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }
 
+    //Method that loads playerlist from SharedPreferences
     private ArrayList<Player> loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();

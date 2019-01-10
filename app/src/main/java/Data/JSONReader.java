@@ -10,9 +10,8 @@ import java.util.ArrayList;
 
 public class JSONReader {
 
-    public ArrayList<String> wordsFromText() throws IOException, NullPointerException {
-        int i;
-        ArrayList<String> wordArrayList = new ArrayList<>();
+    public ArrayList<Words> wordsFromText() throws IOException, NullPointerException {
+        ArrayList<Words> wordArrayList = new ArrayList<>();
         String jsonStr = loadJSONFromAsset();
 
         if (jsonStr != null) {
@@ -23,22 +22,26 @@ public class JSONReader {
                 JSONArray Ordliste = jsonObj.getJSONArray("Ordliste");
 
                 // looping through All Words
-                for (i = 0; i < Ordliste.length(); i++) {
+                for (int i = 0; i < Ordliste.length(); i++) {
                     JSONObject c = Ordliste.getJSONObject(i);
 
+                    String id = c.getString("id");
                     String ord = c.getString("ord");
-                    System.out.println(ord);
-                    wordArrayList.add(ord.toLowerCase());
+                    String definition = c.getString("definition");
+
+                    Words word = new Words(id, ord, definition);
+                    wordArrayList.add(word);
                 }
-            } catch (final JSONException e) {
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-    return wordArrayList;
+            return wordArrayList;
     }
 
+    //Loads words from JSON file on disk.
     public String loadJSONFromAsset() {
-        String json = null;
+        String json;
         String file = "assets/words.json";
 
         try {

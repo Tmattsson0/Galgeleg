@@ -22,6 +22,9 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
     GridLayout letterGrid;
     ImageView gallow;
 
+    long startTime, endTime;
+    int totalTime, score;
+
     int count = 0;
 
     public SpilActivity() throws IOException {
@@ -42,6 +45,8 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         //Obscure word method
         gætteTekst.setText(logik.getSynligtOrd());
         System.out.println("onCreate: Ordet er: " + logik.getOrdet());
+        //Start timer
+        startTime = System.currentTimeMillis();
     }
 
     @Override
@@ -49,7 +54,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         //for now, empty.
     }
 
-    //Button is pressed with method defined in XML
+    //letterButton is pressed with method defined in XML
     public void onBtnClicked(View v) {
         letterButton = findViewById(v.getId());
         letterButtonPressed(letterButton);
@@ -103,12 +108,32 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         //Current end-game
         logik.logStatus();
         if (logik.isSpilletErVundet()) {
+            endTime = System.currentTimeMillis();
+            totalTime = Math.round(((endTime - startTime)/1000));
+            System.out.println("Det tog " + (totalTime) + " sekunder");
+
+            //Calculate score
+            int letterPenalty = logik.getAntalForkerteBogstaver()*5000;
+            System.out.println("letterPenalty: " + letterPenalty);
+            int timePenalty = (totalTime*10000)/logik.getOrdet().length();
+            System.out.println("timePenalty: " + timePenalty);
+            score = (100000 - letterPenalty - timePenalty);
+            System.out.println("Scoren er: " + score);
+            if (score < 0) {
+                score = 0;
+                score += logik.getOrdet().length()*1000;
+            }
+
+            //Send data to wonActivity
             Intent i = new Intent(this, WonActivity.class);
             i.putExtra("ordet", logik.getOrdet());
             i.putExtra("transferCount", count);
+            i.putExtra("time", totalTime);
+            i.putExtra("score", score);
             startActivity(i);
             finish();
         } else if (logik.isSpilletErTabt()){
+            //Send data to lostActivity
             Intent i = new Intent(this, LostActivity.class);
             i.putExtra("ordet", logik.getOrdet());
             startActivity(i);

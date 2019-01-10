@@ -22,7 +22,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.ViewHolder> {
     @NonNull
     @Override
     public WordAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.wordlist_itemview, parent, false);
         return new ViewHolder(view);
     }
 

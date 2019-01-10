@@ -6,38 +6,58 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import Data.JSONReader;
+import Data.Singleton;
+import Data.Words;
 
 public class GalgeLogik {
     /**
      * AHT afprøvning er muligeOrd synlig på pakkeniveau
      */
 
-    JSONReader txtrdr = new JSONReader();
-    public ArrayList<String> muligeOrd;
+    Singleton p = Singleton.getInstance();
+
+    public ArrayList<Words> muligeOrd;
     private String ordet;
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
     private String synligtOrd;
+    private String customWord;
     private int antalForkerteBogstaver;
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
+//    private boolean isCustomWord;
+
+//    public String getCustomWord() {
+//        return customWord;
+//    }
+//
+//    public void setCustomWord(String customWord) {
+//        this.customWord = customWord;
+//    }
+//
+//    public boolean isCustomWord() {
+//        return isCustomWord;
+//    }
+//
+//    public void setIsCustomWord(boolean customWord) {
+//        this.isCustomWord = customWord;
+//    }
 
     public boolean isSpilletErVundet() {
         return spilletErVundet;
     }
 
-    public void setSpilletErVundet(boolean spilletErVundet) {
-        this.spilletErVundet = spilletErVundet;
-    }
+//    public void setSpilletErVundet(boolean spilletErVundet) {
+//        this.spilletErVundet = spilletErVundet;
+//    }
 
     public boolean isSpilletErTabt() {
         return spilletErTabt;
     }
 
-    public void setSpilletErTabt(boolean spilletErTabt) {
-        this.spilletErTabt = spilletErTabt;
-    }
+//    public void setSpilletErTabt(boolean spilletErTabt) {
+//        this.spilletErTabt = spilletErTabt;
+//    }
 
     public ArrayList<String> getBrugteBogstaver() {
         return brugteBogstaver;
@@ -55,25 +75,28 @@ public class GalgeLogik {
         return antalForkerteBogstaver;
     }
 
-    public boolean erSidsteBogstavKorrekt() {
-        return sidsteBogstavVarKorrekt;
-    }
-
-    public boolean erSpilletVundet() {
-        return spilletErVundet;
-    }
-
-    public boolean erSpilletTabt() {
-        return spilletErTabt;
-    }
-
-    public boolean erSpilletSlut() {
-        return spilletErTabt || spilletErVundet;
-    }
+//    public boolean erSidsteBogstavKorrekt() {
+//        return sidsteBogstavVarKorrekt;
+//    }
+//
+//    public boolean erSpilletVundet() {
+//        return spilletErVundet;
+//    }
+//
+//    public boolean erSpilletTabt() {
+//        return spilletErTabt;
+//    }
+//
+//    public boolean erSpilletSlut() {
+//        return spilletErTabt || spilletErVundet;
+//    }
 
 
     public GalgeLogik() throws IOException {
-        muligeOrd = txtrdr.wordsFromText();
+        muligeOrd = p.getWordArrayList();
+        if(p.isCustomWord()) {
+            customWord = p.getCustomWord().getWord();
+        }
         nulstil();
     }
 
@@ -82,7 +105,12 @@ public class GalgeLogik {
         antalForkerteBogstaver = 0;
         spilletErVundet = false;
         spilletErTabt = false;
-        ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size()));
+        if(!p.isCustomWord()){
+            ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size())).getWord().toLowerCase();
+        } else {
+            ordet = customWord.toLowerCase();
+        }
+        p.setIsCustomWord(false);
         opdaterSynligtOrd();
     }
 
