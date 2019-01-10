@@ -27,7 +27,7 @@ public class Singleton {
     public Singleton() {
     }
 
-
+    //Method to create an arrayList taken from JSON file on disk. This list is the used in the program logic
     public void createList() throws IOException {
         wordArrayList = json.wordsFromText();
     }

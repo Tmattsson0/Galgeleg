@@ -38,7 +38,8 @@ public class JSONReader {
         }
             return wordArrayList;
     }
-    
+
+    //Loads words from JSON file on disk.
     public String loadJSONFromAsset() {
         String json;
         String file = "assets/words.json";

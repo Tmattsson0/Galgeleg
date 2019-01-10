@@ -44,6 +44,7 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_velkomst);
 
+        //Create the word list in the singleton
         try {
             p.createList();
         } catch (IOException e) {
@@ -97,7 +98,7 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
             Intent i = new Intent(this, WordListActivity.class);
             startActivity(i);
         } else if (v == buttonQuickstart){
-           BottomSheetDialog bottomSheet = new BottomSheetDialog();
+           BottomSheetFragment bottomSheet = new BottomSheetFragment();
            bottomSheet.show(getSupportFragmentManager(), "bottomSheet");
         }
     }

@@ -14,8 +14,6 @@ public class GalgeLogik {
      * AHT afprøvning er muligeOrd synlig på pakkeniveau
      */
 
-//    JSONReader txtrdr = new JSONReader();
-
     Singleton p = Singleton.getInstance();
 
     public ArrayList<Words> muligeOrd;
@@ -27,39 +25,39 @@ public class GalgeLogik {
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
-    private boolean isCustomWord;
+//    private boolean isCustomWord;
 
-    public String getCustomWord() {
-        return customWord;
-    }
-
-    public void setCustomWord(String customWord) {
-        this.customWord = customWord;
-    }
-
-    public boolean isCustomWord() {
-        return isCustomWord;
-    }
-
-    public void setIsCustomWord(boolean customWord) {
-        this.isCustomWord = customWord;
-    }
+//    public String getCustomWord() {
+//        return customWord;
+//    }
+//
+//    public void setCustomWord(String customWord) {
+//        this.customWord = customWord;
+//    }
+//
+//    public boolean isCustomWord() {
+//        return isCustomWord;
+//    }
+//
+//    public void setIsCustomWord(boolean customWord) {
+//        this.isCustomWord = customWord;
+//    }
 
     public boolean isSpilletErVundet() {
         return spilletErVundet;
     }
 
-    public void setSpilletErVundet(boolean spilletErVundet) {
-        this.spilletErVundet = spilletErVundet;
-    }
+//    public void setSpilletErVundet(boolean spilletErVundet) {
+//        this.spilletErVundet = spilletErVundet;
+//    }
 
     public boolean isSpilletErTabt() {
         return spilletErTabt;
     }
 
-    public void setSpilletErTabt(boolean spilletErTabt) {
-        this.spilletErTabt = spilletErTabt;
-    }
+//    public void setSpilletErTabt(boolean spilletErTabt) {
+//        this.spilletErTabt = spilletErTabt;
+//    }
 
     public ArrayList<String> getBrugteBogstaver() {
         return brugteBogstaver;
@@ -77,21 +75,21 @@ public class GalgeLogik {
         return antalForkerteBogstaver;
     }
 
-    public boolean erSidsteBogstavKorrekt() {
-        return sidsteBogstavVarKorrekt;
-    }
-
-    public boolean erSpilletVundet() {
-        return spilletErVundet;
-    }
-
-    public boolean erSpilletTabt() {
-        return spilletErTabt;
-    }
-
-    public boolean erSpilletSlut() {
-        return spilletErTabt || spilletErVundet;
-    }
+//    public boolean erSidsteBogstavKorrekt() {
+//        return sidsteBogstavVarKorrekt;
+//    }
+//
+//    public boolean erSpilletVundet() {
+//        return spilletErVundet;
+//    }
+//
+//    public boolean erSpilletTabt() {
+//        return spilletErTabt;
+//    }
+//
+//    public boolean erSpilletSlut() {
+//        return spilletErTabt || spilletErVundet;
+//    }
 
 
     public GalgeLogik() throws IOException {
@@ -184,9 +182,5 @@ public class GalgeLogik {
         System.out.println("LOL" + s);
         return s.toString().replace(", ", "");
     }
-
-//    public void customWordStart(String customWord) {
-//        setIsCustomWord(true);
-//    }
 }
 

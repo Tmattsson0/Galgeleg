@@ -17,8 +17,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
     GalgeLogik logik = new GalgeLogik();
 
-
-
     Button letterButton;
     TextView gætteTekst, forkerteBogstaver;
     GridLayout letterGrid;
@@ -37,7 +35,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spil);
 
-
         //FindView
         gætteTekst = (TextView) findViewById(R.id.textView5);
         forkerteBogstaver = (TextView) findViewById(R.id.textView);
@@ -48,6 +45,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         //Obscure word method
         gætteTekst.setText(logik.getSynligtOrd());
         System.out.println("onCreate: Ordet er: " + logik.getOrdet());
+        //Start timer
         startTime = System.currentTimeMillis();
     }
 
@@ -56,7 +54,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         //for now, empty.
     }
 
-    //Button is pressed with method defined in XML
+    //letterButton is pressed with method defined in XML
     public void onBtnClicked(View v) {
         letterButton = findViewById(v.getId());
         letterButtonPressed(letterButton);
@@ -126,6 +124,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
                 score += logik.getOrdet().length()*1000;
             }
 
+            //Send data to wonActivity
             Intent i = new Intent(this, WonActivity.class);
             i.putExtra("ordet", logik.getOrdet());
             i.putExtra("transferCount", count);
@@ -134,6 +133,7 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(i);
             finish();
         } else if (logik.isSpilletErTabt()){
+            //Send data to lostActivity
             Intent i = new Intent(this, LostActivity.class);
             i.putExtra("ordet", logik.getOrdet());
             startActivity(i);

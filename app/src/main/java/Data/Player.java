@@ -21,10 +21,6 @@ public class Player {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public String getName() {
         return name;
     }

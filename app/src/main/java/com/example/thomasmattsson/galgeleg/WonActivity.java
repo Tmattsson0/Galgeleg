@@ -78,10 +78,11 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
         howManyTries.setText("Antal forsøg: " + Integer.toString(count));
         timeSpent.setText("Du brugte " + time + " sekunder" );
 
+        //Start music
         mp = MediaPlayer.create(this, R.raw.cheering);
         mp.start();
 
-
+        //Confetti from 3rd party
         new ParticleSystem(this, 80, R.drawable.confeti2, 10000)
                 .setSpeedModuleAndAngleRange(0f, 0.3f, 0, 0)
                 .setRotationSpeed(144)
@@ -94,7 +95,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
                 .setAcceleration(0.00005f, 90)
                 .emit(findViewById(R.id.emiter_top_left), 8);
 
-
+        //End music when done
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
         public void onCompletion(MediaPlayer mp) {
             mp.release();
@@ -119,12 +120,14 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
             InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
+            //Adds new highscore to list and saves in shared preferences
             EnterName.getText();
             Player p = new Player(EnterName.getText().toString(), score, time, date);
             userScores.add(p);
             System.out.println(EnterName.getText());
             saveData();
-            //Disable button so you can't double entry
+
+            //Disable save button so you can't make double entry
             saveScore.setClickable(false);
         }
     }
@@ -139,7 +142,7 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
         editor.apply();
     }
 
-    //Load the current list to manipulate as arraylist in java.
+    //Load the current list to manipulate as arrayList in java.
     private ArrayList<Player> loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();

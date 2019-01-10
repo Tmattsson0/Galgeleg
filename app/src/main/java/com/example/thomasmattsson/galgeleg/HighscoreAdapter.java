@@ -11,17 +11,17 @@ import java.util.ArrayList;
 
 import Data.Player;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class HighscoreAdapter extends RecyclerView.Adapter<HighscoreAdapter.ViewHolder> {
 
     private ArrayList<Player> playerList;
 
-    public MyAdapter(ArrayList<Player> playerArrayList) {
+    public HighscoreAdapter(ArrayList<Player> playerArrayList) {
         playerList = playerArrayList;
     }
 
     @NonNull
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HighscoreAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.highscore_carditemview, parent, false);
@@ -29,15 +29,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
-//        holder.mPlayerName.setText(playerList.get(position).getName());
-//        holder.mPlayerScore.setText(Integer.toString(playerList.get(position).getScore()));
-//        holder.mPlayerRank.setText(Integer.toString(position+1));
-
+    public void onBindViewHolder(@NonNull HighscoreAdapter.ViewHolder holder, int position) {
         Player player = playerList.get(position);
 
         holder.bind(player, position);
-
         holder.itemView.setOnClickListener(v -> {
             boolean expanded = player.isExpanded();
             player.setExpanded(!expanded);

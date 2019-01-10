@@ -35,9 +35,11 @@ public class LostActivity extends AppCompatActivity implements View.OnClickListe
 
         whatWord.setText("Ordet var: "+ordet);
 
+        //Start the audio
         mp = MediaPlayer.create(this, R.raw.sad_trombone);
         mp.start();
 
+        //end audio when complete
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mp) {
                 mp.release();

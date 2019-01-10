@@ -22,25 +22,18 @@ import Data.Words;
 import SpilLogik.GalgeLogik;
 
 
-// https://www.youtube.com/watch?v=IfpRL2K1hJk
-public class BottomSheetDialog extends BottomSheetDialogFragment {
+public class BottomSheetFragment extends android.support.design.widget.BottomSheetDialogFragment {
 
     RecyclerView mRecyclerView;
     BottomSheetAdapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
 
-//    JSONReader w = new JSONReader();
-
     Singleton p = Singleton.getInstance();
 
-//    ArrayList<Words> words = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-//            words = p.getWordArrayList();
-
 
         View v = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
 
@@ -52,14 +45,18 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new BottomSheetAdapter.OnItemClickListener() {
+
             @Override
             public void onItemClick(int position) {
+                //Syso for test
                 System.out.println(p.getWordArrayList().get(position).getWord());
 
+                //Getting the word from the Singleton on click and setting custom word
                 Words customWord = p.getWordArrayList().get(position);
                 p.setCustomWord(customWord);
                 p.setIsCustomWord(true);
 
+                //Start the "SpilActivity"
                 startActivity(new Intent(getContext(), SpilActivity.class));
                 dismiss();
             }
