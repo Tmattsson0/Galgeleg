@@ -96,7 +96,9 @@ public class GalgeLogik {
 
     public GalgeLogik() throws IOException {
         muligeOrd = p.getWordArrayList();
-        customWord = p.getCustomWord().getWord();
+        if(p.isCustomWord()) {
+            customWord = p.getCustomWord().getWord();
+        }
         nulstil();
     }
 

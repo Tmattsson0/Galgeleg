@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.plattysoft.leonids.ParticleSystem;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -79,6 +80,20 @@ public class WonActivity extends AppCompatActivity implements View.OnClickListen
 
         mp = MediaPlayer.create(this, R.raw.cheering);
         mp.start();
+
+
+        new ParticleSystem(this, 80, R.drawable.confeti2, 10000)
+                .setSpeedModuleAndAngleRange(0f, 0.3f, 0, 0)
+                .setRotationSpeed(144)
+                .setAcceleration(0.00005f, 90)
+                .emit(findViewById(R.id.emiter_top_right), 8);
+
+        new ParticleSystem(this, 80, R.drawable.confeti3, 10000)
+                .setSpeedModuleAndAngleRange(0f, 0.3f, 0, 0)
+                .setRotationSpeed(144)
+                .setAcceleration(0.00005f, 90)
+                .emit(findViewById(R.id.emiter_top_left), 8);
+
 
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
         public void onCompletion(MediaPlayer mp) {

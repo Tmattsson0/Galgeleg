@@ -7,6 +7,20 @@
     tools:context=".WonActivity"
     tools:layout_editor_absoluteY="81dp">
 
+    <View
+        android:id="@+id/emiter_top_left"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_gravity="top|left"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View android:id="@+id/emiter_top_right"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="-20dp"
+        android:layout_width="1dp"
+        android:layout_height="1dp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
