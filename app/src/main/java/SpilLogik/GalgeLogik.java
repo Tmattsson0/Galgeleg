@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import Data.JSONReader;
+import Data.Singleton;
 import Data.Words;
 
 public class GalgeLogik {
@@ -14,7 +14,10 @@ public class GalgeLogik {
      * AHT afprøvning er muligeOrd synlig på pakkeniveau
      */
 
-    JSONReader txtrdr = new JSONReader();
+//    JSONReader txtrdr = new JSONReader();
+
+    Singleton p = Singleton.getInstance();
+
     public ArrayList<Words> muligeOrd;
     private String ordet;
     private ArrayList<String> brugteBogstaver = new ArrayList<String>();
@@ -92,7 +95,8 @@ public class GalgeLogik {
 
 
     public GalgeLogik() throws IOException {
-        muligeOrd = txtrdr.wordsFromText();
+        muligeOrd = p.getWordArrayList();
+        customWord = p.getCustomWord().getWord();
         nulstil();
     }
 
@@ -101,12 +105,12 @@ public class GalgeLogik {
         antalForkerteBogstaver = 0;
         spilletErVundet = false;
         spilletErTabt = false;
-        if(!isCustomWord()){
+        if(!p.isCustomWord()){
             ordet = muligeOrd.get(new Random().nextInt(muligeOrd.size())).getWord().toLowerCase();
         } else {
-            ordet = customWord;
+            ordet = customWord.toLowerCase();
         }
-        setIsCustomWord(false);
+        p.setIsCustomWord(false);
         opdaterSynligtOrd();
     }
 
@@ -179,9 +183,8 @@ public class GalgeLogik {
         return s.toString().replace(", ", "");
     }
 
-    public void customWordStart(String customWord) {
-        this.customWord = customWord;
-        setIsCustomWord(true);
-    }
+//    public void customWordStart(String customWord) {
+//        setIsCustomWord(true);
+//    }
 }
 

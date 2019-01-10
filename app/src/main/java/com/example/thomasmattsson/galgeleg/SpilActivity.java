@@ -17,8 +17,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
 
     GalgeLogik logik = new GalgeLogik();
 
-    Intent i = getIntent();
-    String customWord = i.getStringExtra("customWord");
 
 
     Button letterButton;
@@ -39,9 +37,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spil);
 
-        if (!customWord.equals("")){
-        logik.customWordStart(customWord);
-        }
 
         //FindView
         gætteTekst = (TextView) findViewById(R.id.textView5);

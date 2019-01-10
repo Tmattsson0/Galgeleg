@@ -9,16 +9,20 @@ import android.widget.Button;
 
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
 import Data.Player;
+import Data.Singleton;
 
 import static java.util.Comparator.comparing;
 
 public class VelkomstActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button buttonStart, buttonHighscore, buttonSettings, buttonWordList, buttonQuickstart;
+
+    Singleton p = Singleton.getInstance();
 
     //Makes the default highscoreboard
     ArrayList<Player> playerList = new ArrayList<>();
@@ -39,6 +43,12 @@ public class VelkomstActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_velkomst);
+
+        try {
+            p.createList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         //FindView
         buttonStart = (Button) findViewById(R.id.buttonStart);

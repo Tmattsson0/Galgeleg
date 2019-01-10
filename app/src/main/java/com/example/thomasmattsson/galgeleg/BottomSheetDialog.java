@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import Data.JSONReader;
+import Data.Singleton;
 import Data.Words;
 import SpilLogik.GalgeLogik;
 
@@ -27,25 +28,24 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     BottomSheetAdapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
 
-    JSONReader w = new JSONReader();
+//    JSONReader w = new JSONReader();
 
-    ArrayList<Words> words = new ArrayList<>();
+    Singleton p = Singleton.getInstance();
+
+//    ArrayList<Words> words = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        try {
-            words = w.wordsFromText();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//            words = p.getWordArrayList();
+
 
         View v = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.wordPickerRecyclerView);
         mLayoutManager = new LinearLayoutManager(getContext());
-        mAdapter = new BottomSheetAdapter(words);
+        mAdapter = new BottomSheetAdapter(p.getWordArrayList());
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -53,9 +53,14 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         mAdapter.setOnItemClickListener(new BottomSheetAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                System.out.println(words.get(position).getWord());
+                System.out.println(p.getWordArrayList().get(position).getWord());
 
-                String customWord = words.get(position).getWord().toLowerCase();
+                Words customWord = p.getWordArrayList().get(position);
+                p.setCustomWord(customWord);
+                p.setIsCustomWord(true);
+
+                startActivity(new Intent(getContext(), SpilActivity.class));
+                dismiss();
             }
         });
 
