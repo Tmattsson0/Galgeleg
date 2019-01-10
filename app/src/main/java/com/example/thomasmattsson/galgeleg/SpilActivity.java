@@ -119,7 +119,6 @@ public class SpilActivity extends AppCompatActivity implements View.OnClickListe
             System.out.println("letterPenalty: " + letterPenalty);
             int timePenalty = (totalTime*10000)/logik.getOrdet().length();
             System.out.println("timePenalty: " + timePenalty);
-
             score = (100000 - letterPenalty - timePenalty);
             System.out.println("Scoren er: " + score);
             if (score < 0) {
