@@ -59,7 +59,7 @@ public class WordListActivity extends AppCompatActivity {
             // Showing progress dialog to user
             pDialog = new ProgressDialog(WordListActivity.this);
             pDialog.setMessage("Vent venligst...");
-            pDialog.setCancelable(false);
+            pDialog.setCancelable(true);
             pDialog.show();
         }
 
