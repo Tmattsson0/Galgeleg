@@ -29,7 +29,7 @@ public class WordListActivity extends AppCompatActivity {
     RecyclerView.LayoutManager mLayoutManager;
 
     //URL to get words myJSON.com api
-    private static String url = "https://api.myjson.com/bins/kjfpi";
+    private static String url = "https://next.json-generator.com/api/json/get/NkzFFctmt";
 
     ArrayList<Words> wordList;
 
